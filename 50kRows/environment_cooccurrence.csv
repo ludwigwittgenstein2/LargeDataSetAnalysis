@@ -1,0 +1,106 @@
+CODE_A,CATEGORY_A,CODE_B,CATEGORY_B,N,PERCENT_EVENTS
+E01,"Faculty teaching, feedback & mentorship",E15,No explicit learning-environment feature described,1463,84.71337579617834
+E01,"Faculty teaching, feedback & mentorship",E07,"Teaching infrastructure, didactics & conferences",1386,80.2547770700637
+E07,"Teaching infrastructure, didactics & conferences",E15,No explicit learning-environment feature described,1291,74.75390851187029
+E01,"Faculty teaching, feedback & mentorship",E09,Psychological safety & relational climate,1287,74.52229299363057
+E09,Psychological safety & relational climate,E15,No explicit learning-environment feature described,1199,69.4267515923567
+E01,"Faculty teaching, feedback & mentorship",E03,"Clinical workload, volume & complexity",1160,67.1685002895194
+E07,"Teaching infrastructure, didactics & conferences",E09,Psychological safety & relational climate,1132,65.54719166184134
+E01,"Faculty teaching, feedback & mentorship",E11,"Wellbeing, fatigue & work-life strain",1100,63.69426751592356
+E03,"Clinical workload, volume & complexity",E15,No explicit learning-environment feature described,1088,62.9994209612044
+E03,"Clinical workload, volume & complexity",E07,"Teaching infrastructure, didactics & conferences",1076,62.30457440648524
+E11,"Wellbeing, fatigue & work-life strain",E15,No explicit learning-environment feature described,1054,61.030689056166764
+E07,"Teaching infrastructure, didactics & conferences",E11,"Wellbeing, fatigue & work-life strain",1019,59.0040532715692
+E01,"Faculty teaching, feedback & mentorship",E02,Supervision & graduated autonomy,988,57.209033005211346
+E01,"Faculty teaching, feedback & mentorship",E13,"Assessment, evaluation processes & expectations",980,56.745801968731904
+E03,"Clinical workload, volume & complexity",E09,Psychological safety & relational climate,972,56.28257093225246
+E09,Psychological safety & relational climate,E11,"Wellbeing, fatigue & work-life strain",966,55.93514765489288
+E01,"Faculty teaching, feedback & mentorship",E12,"Patient-care responsibility, acuity & continuity",955,55.29820497973364
+E13,"Assessment, evaluation processes & expectations",E15,No explicit learning-environment feature described,949,54.95078170237406
+E03,"Clinical workload, volume & complexity",E11,"Wellbeing, fatigue & work-life strain",918,53.15576143601621
+E12,"Patient-care responsibility, acuity & continuity",E15,No explicit learning-environment feature described,917,53.09785755645628
+E02,Supervision & graduated autonomy,E15,No explicit learning-environment feature described,916,53.03995367689635
+E07,"Teaching infrastructure, didactics & conferences",E13,"Assessment, evaluation processes & expectations",906,52.46091488129705
+E02,Supervision & graduated autonomy,E07,"Teaching infrastructure, didactics & conferences",895,51.82397220613781
+E07,"Teaching infrastructure, didactics & conferences",E12,"Patient-care responsibility, acuity & continuity",890,51.53445280833816
+E09,Psychological safety & relational climate,E13,"Assessment, evaluation processes & expectations",878,50.839606253618996
+E02,Supervision & graduated autonomy,E03,"Clinical workload, volume & complexity",850,49.21829762594094
+E02,Supervision & graduated autonomy,E09,Psychological safety & relational climate,850,49.21829762594094
+E09,Psychological safety & relational climate,E12,"Patient-care responsibility, acuity & continuity",830,48.06022003474233
+E03,"Clinical workload, volume & complexity",E12,"Patient-care responsibility, acuity & continuity",828,47.94441227562247
+E11,"Wellbeing, fatigue & work-life strain",E13,"Assessment, evaluation processes & expectations",808,46.786334684423856
+E03,"Clinical workload, volume & complexity",E13,"Assessment, evaluation processes & expectations",805,46.612623045744066
+E02,Supervision & graduated autonomy,E11,"Wellbeing, fatigue & work-life strain",800,46.323103647944414
+E11,"Wellbeing, fatigue & work-life strain",E12,"Patient-care responsibility, acuity & continuity",777,44.99131441806601
+E01,"Faculty teaching, feedback & mentorship",E05,Team & interprofessional collaboration,745,43.138390272148236
+E02,Supervision & graduated autonomy,E12,"Patient-care responsibility, acuity & continuity",738,42.73306311522872
+E02,Supervision & graduated autonomy,E13,"Assessment, evaluation processes & expectations",729,42.211928199189344
+E05,Team & interprofessional collaboration,E15,No explicit learning-environment feature described,717,41.51708164447018
+E12,"Patient-care responsibility, acuity & continuity",E13,"Assessment, evaluation processes & expectations",699,40.47481181239143
+E05,Team & interprofessional collaboration,E07,"Teaching infrastructure, didactics & conferences",690,39.95367689635206
+E05,Team & interprofessional collaboration,E09,Psychological safety & relational climate,689,39.89577301679213
+E01,"Faculty teaching, feedback & mentorship",E04,"Rotation, subspecialty & procedural exposure",652,37.75332947307469
+E03,"Clinical workload, volume & complexity",E05,Team & interprofessional collaboration,641,37.11638679791546
+E05,Team & interprofessional collaboration,E11,"Wellbeing, fatigue & work-life strain",635,36.76896352055588
+E04,"Rotation, subspecialty & procedural exposure",E15,No explicit learning-environment feature described,630,36.47944412275623
+E04,"Rotation, subspecialty & procedural exposure",E07,"Teaching infrastructure, didactics & conferences",615,35.610885929357266
+E03,"Clinical workload, volume & complexity",E04,"Rotation, subspecialty & procedural exposure",598,34.626519976838445
+E04,"Rotation, subspecialty & procedural exposure",E09,Psychological safety & relational climate,581,33.64215402431963
+E02,Supervision & graduated autonomy,E05,Team & interprofessional collaboration,578,33.46844238563984
+E05,Team & interprofessional collaboration,E12,"Patient-care responsibility, acuity & continuity",575,33.29473074696005
+E05,Team & interprofessional collaboration,E13,"Assessment, evaluation processes & expectations",568,32.88940359004053
+E04,"Rotation, subspecialty & procedural exposure",E11,"Wellbeing, fatigue & work-life strain",561,32.48407643312102
+E02,Supervision & graduated autonomy,E04,"Rotation, subspecialty & procedural exposure",543,31.44180660104227
+E04,"Rotation, subspecialty & procedural exposure",E12,"Patient-care responsibility, acuity & continuity",526,30.457440648523452
+E04,"Rotation, subspecialty & procedural exposure",E13,"Assessment, evaluation processes & expectations",498,28.836132020845398
+E01,"Faculty teaching, feedback & mentorship",E10,"Workflow, systems, resources & operational barriers",442,25.59351476548929
+E10,"Workflow, systems, resources & operational barriers",E15,No explicit learning-environment feature described,442,25.59351476548929
+E07,"Teaching infrastructure, didactics & conferences",E10,"Workflow, systems, resources & operational barriers",432,25.014475969889983
+E04,"Rotation, subspecialty & procedural exposure",E05,Team & interprofessional collaboration,411,23.798494499131444
+E03,"Clinical workload, volume & complexity",E10,"Workflow, systems, resources & operational barriers",409,23.68268674001158
+E09,Psychological safety & relational climate,E10,"Workflow, systems, resources & operational barriers",403,23.335263462651998
+E10,"Workflow, systems, resources & operational barriers",E11,"Wellbeing, fatigue & work-life strain",400,23.161551823972207
+E10,"Workflow, systems, resources & operational barriers",E13,"Assessment, evaluation processes & expectations",373,21.598147075854083
+E02,Supervision & graduated autonomy,E10,"Workflow, systems, resources & operational barriers",359,20.787492762015056
+E10,"Workflow, systems, resources & operational barriers",E12,"Patient-care responsibility, acuity & continuity",356,20.613781123335265
+E05,Team & interprofessional collaboration,E10,"Workflow, systems, resources & operational barriers",318,18.413433700057904
+E01,"Faculty teaching, feedback & mentorship",E08,Scholarly/research opportunities & barriers,290,16.79212507237985
+E08,Scholarly/research opportunities & barriers,E15,No explicit learning-environment feature described,289,16.73422119281992
+E07,"Teaching infrastructure, didactics & conferences",E08,Scholarly/research opportunities & barriers,285,16.502605674580195
+E04,"Rotation, subspecialty & procedural exposure",E10,"Workflow, systems, resources & operational barriers",284,16.444701795020265
+E01,"Faculty teaching, feedback & mentorship",E14,"Equity, inclusion & discrimination climate",278,16.097278517660683
+E07,"Teaching infrastructure, didactics & conferences",E14,"Equity, inclusion & discrimination climate",276,15.981470758540823
+E14,"Equity, inclusion & discrimination climate",E15,No explicit learning-environment feature described,272,15.7498552403011
+E09,Psychological safety & relational climate,E14,"Equity, inclusion & discrimination climate",262,15.170816444701796
+E03,"Clinical workload, volume & complexity",E08,Scholarly/research opportunities & barriers,255,14.765489287782282
+E03,"Clinical workload, volume & complexity",E14,"Equity, inclusion & discrimination climate",253,14.64968152866242
+E08,Scholarly/research opportunities & barriers,E11,"Wellbeing, fatigue & work-life strain",253,14.64968152866242
+E11,"Wellbeing, fatigue & work-life strain",E14,"Equity, inclusion & discrimination climate",251,14.53387376954256
+E08,Scholarly/research opportunities & barriers,E09,Psychological safety & relational climate,249,14.418066010422699
+E12,"Patient-care responsibility, acuity & continuity",E14,"Equity, inclusion & discrimination climate",249,14.418066010422699
+E13,"Assessment, evaluation processes & expectations",E14,"Equity, inclusion & discrimination climate",239,13.839027214823393
+E02,Supervision & graduated autonomy,E14,"Equity, inclusion & discrimination climate",235,13.607411696583672
+E08,Scholarly/research opportunities & barriers,E13,"Assessment, evaluation processes & expectations",235,13.607411696583672
+E08,Scholarly/research opportunities & barriers,E12,"Patient-care responsibility, acuity & continuity",233,13.49160393746381
+E02,Supervision & graduated autonomy,E08,Scholarly/research opportunities & barriers,220,12.738853503184714
+E05,Team & interprofessional collaboration,E14,"Equity, inclusion & discrimination climate",215,12.449334105385061
+E04,"Rotation, subspecialty & procedural exposure",E14,"Equity, inclusion & discrimination climate",208,12.044006948465547
+E04,"Rotation, subspecialty & procedural exposure",E08,Scholarly/research opportunities & barriers,190,11.001737116386797
+E05,Team & interprofessional collaboration,E08,Scholarly/research opportunities & barriers,186,10.770121598147076
+E10,"Workflow, systems, resources & operational barriers",E14,"Equity, inclusion & discrimination climate",174,10.07527504342791
+E01,"Faculty teaching, feedback & mentorship",E06,Leadership & role-transition opportunities,154,8.9171974522293
+E06,Leadership & role-transition opportunities,E07,"Teaching infrastructure, didactics & conferences",152,8.801389693109439
+E06,Leadership & role-transition opportunities,E15,No explicit learning-environment feature described,152,8.801389693109439
+E06,Leadership & role-transition opportunities,E09,Psychological safety & relational climate,149,8.627678054429646
+E08,Scholarly/research opportunities & barriers,E10,"Workflow, systems, resources & operational barriers",147,8.511870295309786
+E03,"Clinical workload, volume & complexity",E06,Leadership & role-transition opportunities,145,8.396062536189925
+E06,Leadership & role-transition opportunities,E11,"Wellbeing, fatigue & work-life strain",140,8.106543138390272
+E02,Supervision & graduated autonomy,E06,Leadership & role-transition opportunities,139,8.048639258830342
+E06,Leadership & role-transition opportunities,E12,"Patient-care responsibility, acuity & continuity",135,7.81702374059062
+E06,Leadership & role-transition opportunities,E13,"Assessment, evaluation processes & expectations",133,7.701215981470758
+E05,Team & interprofessional collaboration,E06,Leadership & role-transition opportunities,119,6.890561667631731
+E04,"Rotation, subspecialty & procedural exposure",E06,Leadership & role-transition opportunities,116,6.7168500289519395
+E08,Scholarly/research opportunities & barriers,E14,"Equity, inclusion & discrimination climate",110,6.369426751592357
+E06,Leadership & role-transition opportunities,E10,"Workflow, systems, resources & operational barriers",93,5.385060799073538
+E06,Leadership & role-transition opportunities,E14,"Equity, inclusion & discrimination climate",73,4.226983207874928
+E06,Leadership & role-transition opportunities,E08,Scholarly/research opportunities & barriers,58,3.3584250144759697

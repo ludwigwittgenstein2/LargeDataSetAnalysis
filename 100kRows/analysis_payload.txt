@@ -1,0 +1,435 @@
+GMETS 100K ANALYSIS PAYLOAD
+===========================
+
+METHOD
+------
+Narrative rows coded: 100000
+Unique evaluation events after aggregation: 1888
+Bulk model: openai-gpt-5-nano
+Unresolved row failures: 0
+
+This is a mixed inductive-confirmatory design:
+- prior Claude pilot supplied inductive/open-code discovery and category construction;
+- this run applies the emergent fixed taxonomy at scale;
+- taxonomy_gap_flag and negative_case_flag provide a saturation/negative-case audit;
+- statistics are computed at evaluation-event level to avoid pseudo-replication.
+
+ENVIRONMENT PREVALENCE
+----------------------
+CODE                                            CATEGORY    N   PERCENT
+ E01             Faculty teaching, feedback & mentorship 1840 97.457627
+ E15  No explicit learning-environment feature described 1715 90.836864
+ E07    Teaching infrastructure, didactics & conferences 1629 86.281780
+ E09           Psychological safety & relational climate 1525 80.773305
+ E03              Clinical workload, volume & complexity 1398 74.046610
+ E11               Wellbeing, fatigue & work-life strain 1385 73.358051
+ E02                    Supervision & graduated autonomy 1294 68.538136
+ E13     Assessment, evaluation processes & expectations 1233 65.307203
+ E12    Patient-care responsibility, acuity & continuity 1220 64.618644
+ E05              Team & interprofessional collaboration  978 51.800847
+ E04        Rotation, subspecialty & procedural exposure  912 48.305085
+ E10 Workflow, systems, resources & operational barriers  635 33.633475
+ E14          Equity, inclusion & discrimination climate  455 24.099576
+ E08         Scholarly/research opportunities & barriers  409 21.663136
+ E06          Leadership & role-transition opportunities  241 12.764831
+
+DEVELOPMENTAL OUTCOMES
+----------------------
+CODE                                       CATEGORY    N   PERCENT
+ D04           Communication & teamwork development 1758 93.114407
+ D06  Feedback receptivity & self-directed learning 1595 84.480932
+ D01     Clinical reasoning & diagnostic competence 1428 75.635593
+ D03    Autonomy, confidence & independent judgment 1381 73.146186
+ D10     No explicit developmental effect described 1336 70.762712
+ D05   Professional identity & leadership formation 1206 63.877119
+ D09                 Wellbeing, resilience & coping 1117 59.163136
+ D07 Efficiency, organization & workflow management  970 51.377119
+ D08   Scholarship, research & teaching development  650 34.427966
+ D02              Procedural & technical competence  633 33.527542
+
+MECHANISMS
+----------
+CODE                                       CATEGORY    N   PERCENT
+ M01        Iterative feedback, coaching & modeling 1776 94.067797
+ M03 Direct supervision, scaffolding & availability 1699 89.989407
+ M06     Reflection, self-assessment & goal setting 1591 84.269068
+ M07    Structured teaching, didactics & simulation 1378 72.987288
+ M04           Autonomy, ownership & responsibility 1357 71.875000
+ M09                No explicit mechanism described 1098 58.156780
+ M02        Repeated or graduated clinical exposure 1079 57.150424
+ M05  Team interaction & interprofessional learning  951 50.370763
+ M08    Research, scholarship & deliberate practice  427 22.616525
+
+PERFORMANCE SIGNAL
+------------------
+    PERFORMANCE_SIGNAL    N   PERCENT
+              positive 1757 93.061441
+neutral_non_evaluative  107  5.667373
+                 mixed   16  0.847458
+               concern    8  0.423729
+
+CONFIDENCE / TAXONOMY GAPS
+--------------------------
+ N_ROWS  N_EVENTS  MEAN_ROW_CONFIDENCE  MEDIAN_ROW_CONFIDENCE  ZERO_CONFIDENCE_ROWS  ROWS_BELOW_THRESHOLD  EVENTS_NEEDING_ADJUDICATION  TAXONOMY_GAP_ROWS  TAXONOMY_GAP_PERCENT  NEGATIVE_CASE_ROWS
+ 100000      1888            58.505572                   72.0                   850                 21736                         1429                430                  0.43                4934
+
+TOP GAP CONCEPTS
+----------------
+                                                     GAP_CONCEPT   N
+                                                             nan 164
+              no explicit learning-environment feature described  13
+                                           fund of knowledge gap   2
+              insufficient explicit learning-environment details   2
+             insufficient explicit learning-environment features   2
+              No explicit learning-environment feature described   2
+           viscerosomatic association thought process not mapped   1
+                           immunization/screening knowledge gaps   1
+                                               EBUS training gap   1
+ Inpatient red team lacks explicit learning-environment features   1
+              intraoperative manual dexterity and tissue tension   1
+                 brief: no explicit learning-environment feature   1
+     rotation duration limitation affecting learning progression   1
+                   dx/plan commitment; addressing gaps in HCC/HM   1
+                                 insufficient evaluation contact   1
+                           hippocampal constraints knowledge gap   1
+insufficient contact limits evaluation of systems-based practice   1
+                       no explicit research development observed   1
+                                scholarly activity in mentorship   1
+         insufficient experiential diversity in technical skills   1
+                          ambiguous learning needs not described   1
+     outpatient clinic context lacking explicit learning aspects   1
+    obstetrical delivery not mastered despite overall competency   1
+                ambiguous plan for undiagnosed nodule management   1
+                       absence of structured bootcamp experience   1
+
+HIGH VS LOW STRUCTURED SCORE
+----------------------------
+CODE                                            CATEGORY  HIGH_N  HIGH_PERCENT  LOW_N  LOW_PERCENT  RISK_DIFFERENCE_PP  ODDS_RATIO  CI95_LOW  CI95_HIGH      P_VALUE        FDR_Q
+ E10 Workflow, systems, resources & operational barriers      95     21.111111    177    39.333333          -18.222222    0.412748  0.308340   0.555669 3.372135e-09 5.058203e-08
+ E04        Rotation, subspecialty & procedural exposure     161     35.777778    231    51.333333          -15.555556    0.528154  0.405100   0.690642 3.348608e-06 2.511456e-05
+ E14          Equity, inclusion & discrimination climate      80     17.777778    135    30.000000          -12.222222    0.504505  0.369559   0.692550 2.253643e-05 1.126821e-04
+ E03              Clinical workload, volume & complexity     282     62.666667    338    75.111111          -12.444444    0.556213  0.418533   0.741814 7.211041e-05 2.704140e-04
+ E12    Patient-care responsibility, acuity & continuity     250     55.555556    300    66.666667          -11.111111    0.625000  0.477751   0.819537 7.956776e-04 2.387033e-03
+ E13     Assessment, evaluation processes & expectations     254     56.444444    301    66.888889          -10.444444    0.641501  0.490086   0.841561 1.594290e-03 3.985725e-03
+ E11               Wellbeing, fatigue & work-life strain     300     66.666667    333    74.000000           -7.333333    0.702703  0.527826   0.937582 1.944563e-02 4.166921e-02
+ E05              Team & interprofessional collaboration     213     47.333333    245    54.444444           -7.111111    0.752002  0.579189   0.977618 3.867577e-02 7.251706e-02
+ E06          Leadership & role-transition opportunities      41      9.111111     61    13.555556           -4.444444    0.639264  0.422789   0.974383 4.530868e-02 7.551447e-02
+ E08         Scholarly/research opportunities & barriers      66     14.666667     88    19.555556           -4.888889    0.707031  0.499739   1.004237 6.282584e-02 9.423876e-02
+ E02                    Supervision & graduated autonomy     281     62.444444    305    67.777778           -5.333333    0.790474  0.601167   1.040700 1.076418e-01 1.467842e-01
+ E07    Teaching infrastructure, didactics & conferences     370     82.222222    381    84.666667           -2.444444    0.837598  0.590066   1.191419 3.698509e-01 4.623136e-01
+ E01             Faculty teaching, feedback & mentorship     433     96.222222    437    97.111111           -0.888889    0.757706  0.371205   1.573983 5.782004e-01 6.671543e-01
+ E15  No explicit learning-environment feature described     399     88.666667    402    89.333333           -0.666667    0.934153  0.616691   1.416783 8.313821e-01 8.907665e-01
+ E09           Psychological safety & relational climate     353     78.444444    355    78.888889           -0.444444    0.973864  0.708471   1.338982 9.351670e-01 9.351670e-01
+
+CONTINUOUS SCORE ASSOCIATIONS
+-----------------------------
+CODE                                            CATEGORY  N_PRESENT  N_ABSENT  MEAN_PRESENT  MEAN_ABSENT      DIFF  MANN_WHITNEY_U      P_VALUE        FDR_Q
+ E10 Workflow, systems, resources & operational barriers        601      1197      5.739718     6.331965 -0.592247        291626.5 5.540693e-11 8.311039e-10
+ E04        Rotation, subspecialty & procedural exposure        861       937      5.951253     6.301924 -0.350671        349331.0 8.873007e-07 6.654755e-06
+ E14          Equity, inclusion & discrimination climate        428      1370      5.703538     6.268480 -0.564942        250279.5 4.734110e-06 2.367055e-05
+ E03              Clinical workload, volume & complexity       1328       470      6.070608     6.313115 -0.242507        272888.0 5.076546e-05 1.903705e-04
+ E13     Assessment, evaluation processes & expectations       1163       635      6.039584     6.306923 -0.267339        331049.5 2.821210e-04 8.463629e-04
+ E08         Scholarly/research opportunities & barriers        378      1420      5.811921     6.219737 -0.407815        237339.0 5.386421e-04 1.346605e-03
+ E12    Patient-care responsibility, acuity & continuity       1154       644      6.038271     6.305540 -0.267269        337351.5 1.178951e-03 2.526324e-03
+ E11               Wellbeing, fatigue & work-life strain       1313       485      6.067606     6.313743 -0.246137        287473.0 1.546079e-03 2.898898e-03
+ E05              Team & interprofessional collaboration        940       858      6.025038     6.253375 -0.228337        373453.5 6.708046e-03 1.118008e-02
+ E06          Leadership & role-transition opportunities        229      1569      5.760893     6.188456 -0.427563        161339.0 1.258637e-02 1.887956e-02
+ E02                    Supervision & graduated autonomy       1224       574      6.116270     6.171808 -0.055538        336760.5 1.568714e-01 2.139156e-01
+ E07    Teaching infrastructure, didactics & conferences       1550       248      6.135233     6.126293  0.008940        182486.0 2.006409e-01 2.508011e-01
+ E01             Faculty teaching, feedback & mentorship       1751        47      6.131107     6.241773 -0.110666         37779.0 3.374209e-01 3.893318e-01
+ E15  No explicit learning-environment feature described       1631       167      6.140104     6.074387  0.065717        133261.0 6.468725e-01 6.930776e-01
+ E09           Psychological safety & relational climate       1448       350      6.158402     6.033047  0.125354        253854.0 9.585011e-01 9.585011e-01
+
+CO-OCCURRENCE
+-------------
+CODE_A                                       CATEGORY_A CODE_B                                         CATEGORY_B    N  PERCENT_EVENTS
+   E01          Faculty teaching, feedback & mentorship    E15 No explicit learning-environment feature described 1680       88.983051
+   E01          Faculty teaching, feedback & mentorship    E07   Teaching infrastructure, didactics & conferences 1616       85.593220
+   E07 Teaching infrastructure, didactics & conferences    E15 No explicit learning-environment feature described 1527       80.879237
+   E01          Faculty teaching, feedback & mentorship    E09          Psychological safety & relational climate 1523       80.667373
+   E09        Psychological safety & relational climate    E15 No explicit learning-environment feature described 1450       76.800847
+   E07 Teaching infrastructure, didactics & conferences    E09          Psychological safety & relational climate 1393       73.781780
+   E01          Faculty teaching, feedback & mentorship    E03             Clinical workload, volume & complexity 1386       73.411017
+   E01          Faculty teaching, feedback & mentorship    E11              Wellbeing, fatigue & work-life strain 1378       72.987288
+   E03           Clinical workload, volume & complexity    E15 No explicit learning-environment feature described 1332       70.550847
+   E11            Wellbeing, fatigue & work-life strain    E15 No explicit learning-environment feature described 1324       70.127119
+   E03           Clinical workload, volume & complexity    E07   Teaching infrastructure, didactics & conferences 1316       69.703390
+   E07 Teaching infrastructure, didactics & conferences    E11              Wellbeing, fatigue & work-life strain 1295       68.591102
+   E01          Faculty teaching, feedback & mentorship    E02                   Supervision & graduated autonomy 1291       68.379237
+   E09        Psychological safety & relational climate    E11              Wellbeing, fatigue & work-life strain 1239       65.625000
+   E01          Faculty teaching, feedback & mentorship    E13    Assessment, evaluation processes & expectations 1233       65.307203
+   E02                 Supervision & graduated autonomy    E15 No explicit learning-environment feature described 1227       64.989407
+   E03           Clinical workload, volume & complexity    E09          Psychological safety & relational climate 1225       64.883475
+   E01          Faculty teaching, feedback & mentorship    E12   Patient-care responsibility, acuity & continuity 1215       64.353814
+   E02                 Supervision & graduated autonomy    E07   Teaching infrastructure, didactics & conferences 1205       63.824153
+   E13  Assessment, evaluation processes & expectations    E15 No explicit learning-environment feature described 1196       63.347458
+   E12 Patient-care responsibility, acuity & continuity    E15 No explicit learning-environment feature described 1181       62.552966
+   E03           Clinical workload, volume & complexity    E11              Wellbeing, fatigue & work-life strain 1179       62.447034
+   E02                 Supervision & graduated autonomy    E09          Psychological safety & relational climate 1170       61.970339
+   E07 Teaching infrastructure, didactics & conferences    E13    Assessment, evaluation processes & expectations 1169       61.917373
+   E07 Teaching infrastructure, didactics & conferences    E12   Patient-care responsibility, acuity & continuity 1165       61.705508
+   E02                 Supervision & graduated autonomy    E03             Clinical workload, volume & complexity 1131       59.904661
+   E09        Psychological safety & relational climate    E13    Assessment, evaluation processes & expectations 1119       59.269068
+   E09        Psychological safety & relational climate    E12   Patient-care responsibility, acuity & continuity 1111       58.845339
+   E02                 Supervision & graduated autonomy    E11              Wellbeing, fatigue & work-life strain 1101       58.315678
+   E03           Clinical workload, volume & complexity    E12   Patient-care responsibility, acuity & continuity 1083       57.362288
+
+SENSITIZING CONSTRUCTS
+----------------------
+               CONSTRUCT  N_PRESENT  PERCENT_PRESENT  PERCENT_NOT_MENTIONED
+    psychological_safety       1581        83.739407              16.260593
+supervision_availability       1447        76.641949              23.358051
+        workload_fatigue        886        46.927966              53.072034
+       wellbeing_burnout        511        27.065678              72.934322
+ handoff_systems_failure        222        11.758475              88.241525
+ serious_patient_outcome        123         6.514831              93.485169
+     discrimination_bias        121         6.408898              93.591102
+        error_disclosure         84         4.449153              95.550847
+
+TEMPORAL TRENDS
+---------------
+CODE                                            CATEGORY  N_YEARS  SPEARMAN_RHO  P_VALUE    FDR_Q
+ E13     Assessment, evaluation processes & expectations       17     -0.625000 0.007304 0.109564
+ E09           Psychological safety & relational climate       17     -0.566176 0.017823 0.133671
+ E05              Team & interprofessional collaboration       17     -0.497549 0.042129 0.159644
+ E11               Wellbeing, fatigue & work-life strain       17     -0.496628 0.042572 0.159644
+ E12    Patient-care responsibility, acuity & continuity       17     -0.400493 0.111156 0.277891
+ E15  No explicit learning-environment feature described       17     -0.415235 0.097423 0.277891
+ E08         Scholarly/research opportunities & barriers       17     -0.381361 0.130945 0.280597
+ E04        Rotation, subspecialty & procedural exposure       17     -0.313725 0.220104 0.366841
+ E06          Leadership & role-transition opportunities       17     -0.313725 0.220104 0.366841
+ E02                    Supervision & graduated autonomy       17     -0.291667 0.256003 0.384004
+ E07    Teaching infrastructure, didactics & conferences       17     -0.256285 0.320752 0.400939
+ E14          Equity, inclusion & discrimination climate       17     -0.259804 0.313917 0.400939
+ E10 Workflow, systems, resources & operational barriers       17     -0.194972 0.453314 0.523055
+ E03              Clinical workload, volume & complexity       17     -0.171569 0.510266 0.546714
+ E01             Faculty teaching, feedback & mentorship       17     -0.111746 0.669389 0.669389
+
+EVALUATION-TYPE / PERSPECTIVE PATTERNS
+--------------------------------------
+            EVALUATION_TYPE CODE                                            CATEGORY  N_EVENTS  N_PRESENT  PERCENT_PRESENT
+Faculty of program/hospital  E01             Faculty teaching, feedback & mentorship       214        208        97.196262
+Faculty of program/hospital  E15  No explicit learning-environment feature described       214        201        93.925234
+Faculty of program/hospital  E07    Teaching infrastructure, didactics & conferences       214        195        91.121495
+Faculty of program/hospital  E03              Clinical workload, volume & complexity       214        183        85.514019
+Faculty of program/hospital  E09           Psychological safety & relational climate       214        170        79.439252
+Faculty of program/hospital  E11               Wellbeing, fatigue & work-life strain       214        169        78.971963
+Faculty of program/hospital  E02                    Supervision & graduated autonomy       214        136        63.551402
+Faculty of program/hospital  E12    Patient-care responsibility, acuity & continuity       214        129        60.280374
+Faculty of program/hospital  E04        Rotation, subspecialty & procedural exposure       214        120        56.074766
+Faculty of program/hospital  E13     Assessment, evaluation processes & expectations       214        118        55.140187
+Faculty of program/hospital  E05              Team & interprofessional collaboration       214        117        54.672897
+Faculty of program/hospital  E08         Scholarly/research opportunities & barriers       214        114        53.271028
+Faculty of program/hospital  E10 Workflow, systems, resources & operational barriers       214        101        47.196262
+Faculty of program/hospital  E14          Equity, inclusion & discrimination climate       214         45        21.028037
+Faculty of program/hospital  E06          Leadership & role-transition opportunities       214         19         8.878505
+        Faculty of resident  E01             Faculty teaching, feedback & mentorship      1131       1107        97.877984
+        Faculty of resident  E15  No explicit learning-environment feature described      1131       1019        90.097259
+        Faculty of resident  E07    Teaching infrastructure, didactics & conferences      1131        965        85.322723
+        Faculty of resident  E09           Psychological safety & relational climate      1131        905        80.017683
+        Faculty of resident  E03              Clinical workload, volume & complexity      1131        819        72.413793
+        Faculty of resident  E02                    Supervision & graduated autonomy      1131        802        70.910698
+        Faculty of resident  E11               Wellbeing, fatigue & work-life strain      1131        802        70.910698
+        Faculty of resident  E13     Assessment, evaluation processes & expectations      1131        771        68.169761
+        Faculty of resident  E12    Patient-care responsibility, acuity & continuity      1131        738        65.251989
+        Faculty of resident  E05              Team & interprofessional collaboration      1131        548        48.452697
+        Faculty of resident  E04        Rotation, subspecialty & procedural exposure      1131        541        47.833775
+        Faculty of resident  E10 Workflow, systems, resources & operational barriers      1131        313        27.674624
+        Faculty of resident  E14          Equity, inclusion & discrimination climate      1131        258        22.811671
+        Faculty of resident  E08         Scholarly/research opportunities & barriers      1131        173        15.296198
+        Faculty of resident  E06          Leadership & role-transition opportunities      1131        139        12.290009
+  Patient/staff of resident  E01             Faculty teaching, feedback & mentorship       131        128        97.709924
+  Patient/staff of resident  E09           Psychological safety & relational climate       131        114        87.022901
+  Patient/staff of resident  E15  No explicit learning-environment feature described       131        113        86.259542
+  Patient/staff of resident  E07    Teaching infrastructure, didactics & conferences       131         96        73.282443
+  Patient/staff of resident  E11               Wellbeing, fatigue & work-life strain       131         96        73.282443
+  Patient/staff of resident  E02                    Supervision & graduated autonomy       131         79        60.305344
+  Patient/staff of resident  E05              Team & interprofessional collaboration       131         78        59.541985
+  Patient/staff of resident  E03              Clinical workload, volume & complexity       131         76        58.015267
+  Patient/staff of resident  E12    Patient-care responsibility, acuity & continuity       131         73        55.725191
+  Patient/staff of resident  E13     Assessment, evaluation processes & expectations       131         70        53.435115
+  Patient/staff of resident  E10 Workflow, systems, resources & operational barriers       131         33        25.190840
+  Patient/staff of resident  E04        Rotation, subspecialty & procedural exposure       131         32        24.427481
+  Patient/staff of resident  E14          Equity, inclusion & discrimination climate       131         14        10.687023
+  Patient/staff of resident  E06          Leadership & role-transition opportunities       131         11         8.396947
+  Patient/staff of resident  E08         Scholarly/research opportunities & barriers       131          4         3.053435
+        Resident of faculty  E01             Faculty teaching, feedback & mentorship        36         36       100.000000
+        Resident of faculty  E09           Psychological safety & relational climate        36         35        97.222222
+        Resident of faculty  E07    Teaching infrastructure, didactics & conferences        36         32        88.888889
+        Resident of faculty  E15  No explicit learning-environment feature described        36         32        88.888889
+        Resident of faculty  E11               Wellbeing, fatigue & work-life strain        36         25        69.444444
+        Resident of faculty  E02                    Supervision & graduated autonomy        36         23        63.888889
+        Resident of faculty  E13     Assessment, evaluation processes & expectations        36         20        55.555556
+        Resident of faculty  E12    Patient-care responsibility, acuity & continuity        36         17        47.222222
+        Resident of faculty  E03              Clinical workload, volume & complexity        36         16        44.444444
+        Resident of faculty  E04        Rotation, subspecialty & procedural exposure        36          9        25.000000
+        Resident of faculty  E05              Team & interprofessional collaboration        36          7        19.444444
+        Resident of faculty  E08         Scholarly/research opportunities & barriers        36          5        13.888889
+        Resident of faculty  E14          Equity, inclusion & discrimination climate        36          5        13.888889
+        Resident of faculty  E06          Leadership & role-transition opportunities        36          3         8.333333
+        Resident of faculty  E10 Workflow, systems, resources & operational barriers        36          3         8.333333
+Resident of resident (peer)  E01             Faculty teaching, feedback & mentorship        79         79       100.000000
+Resident of resident (peer)  E15  No explicit learning-environment feature described        79         74        93.670886
+Resident of resident (peer)  E09           Psychological safety & relational climate        79         71        89.873418
+Resident of resident (peer)  E07    Teaching infrastructure, didactics & conferences        79         69        87.341772
+Resident of resident (peer)  E11               Wellbeing, fatigue & work-life strain        79         65        82.278481
+Resident of resident (peer)  E05              Team & interprofessional collaboration        79         62        78.481013
+Resident of resident (peer)  E02                    Supervision & graduated autonomy        79         61        77.215190
+Resident of resident (peer)  E13     Assessment, evaluation processes & expectations        79         59        74.683544
+Resident of resident (peer)  E03              Clinical workload, volume & complexity        79         58        73.417722
+Resident of resident (peer)  E12    Patient-care responsibility, acuity & continuity        79         54        68.354430
+Resident of resident (peer)  E04        Rotation, subspecialty & procedural exposure        79         36        45.569620
+Resident of resident (peer)  E10 Workflow, systems, resources & operational barriers        79         24        30.379747
+Resident of resident (peer)  E14          Equity, inclusion & discrimination climate        79         19        24.050633
+Resident of resident (peer)  E06          Leadership & role-transition opportunities        79         15        18.987342
+Resident of resident (peer)  E08         Scholarly/research opportunities & barriers        79          6         7.594937
+ Resident of service/clinic  E01             Faculty teaching, feedback & mentorship        81         77        95.061728
+ Resident of service/clinic  E15  No explicit learning-environment feature described        81         76        93.827160
+ Resident of service/clinic  E07    Teaching infrastructure, didactics & conferences        81         74        91.358025
+ Resident of service/clinic  E03              Clinical workload, volume & complexity        81         68        83.950617
+ Resident of service/clinic  E11               Wellbeing, fatigue & work-life strain        81         62        76.543210
+
+FEEDBACK BY EVALUATION TYPE
+---------------------------
+                       EVALUATION_TYPE    N  MEAN_SPECIFICITY  MEAN_ACTIONABILITY
+                   Faculty of resident 1131          3.146660            3.233967
+           Faculty of program/hospital  214          2.778702            2.937517
+             Patient/staff of resident  131          2.913647            3.016464
+              Resident self evaluation  103          2.944267            3.062652
+            Resident of service/clinic   81          2.972396            3.127037
+           Resident of resident (peer)   79          3.181353            3.283586
+                   Resident of faculty   36          3.272657            3.343048
+Resident/Student/Faculty of conference   33          2.868427            3.018107
+
+PROGRAM SUMMARY - LARGEST PROGRAMS
+----------------------------------
+                                                  PROGRAM   N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  MEAN_CONFIDENCE  GAP_RATE  NEGATIVE_CASE_RATE
+                                          Family Medicine 101    6.350597          3.112072            3.214778        57.558341  0.039604            0.188119
+                                        Internal Medicine  69    6.017526          3.176387            3.289269        56.021808  0.159420            0.478261
+                                               Pediatrics  52    4.324264          3.029747            3.122667        57.815519  0.192308            0.596154
+                         Pulmonary Diseases/Critical Care  41    6.342080          3.078720            3.229440        57.688949  0.170732            0.463415
+                            Anatomic & Clinical Pathology  41    4.654793          3.106185            3.187157        59.800640  0.219512            0.439024
+                                            Ophthalmology  39    7.197289          2.932521            3.149819        63.801526  0.000000            0.128205
+                                      Orthopaedic Surgery  37    6.882963          3.158031            3.242555        60.773368  0.081081            0.405405
+                                                Neurology  37    5.137451          3.249186            3.228652        60.224193  0.135135            0.324324
+               Cleveland Clinic Weston- Internal Medicine  36    6.944583          3.181024            3.290091        57.405037  0.138889            0.333333
+                                     Diagnostic Radiology  31    4.930431          3.271746            3.351800        59.353584  0.064516            0.451613
+          Cleveland Clinic Akron General- Family Medicine  29    6.078554          3.426893            3.509615        49.109960  0.206897            0.275862
+                                              Dermatology  28    5.109424          2.950477            3.075361        57.115893  0.214286            0.392857
+                                           Anesthesiology  27    5.595659          3.045579            3.193272        60.894468  0.259259            0.444444
+Cleveland Clinic Akron General- Obstetrics and Gynecology  24    5.591028          3.191036            3.409906        56.422539  0.041667            0.250000
+                                               Psychiatry  24    6.153732          3.063458            3.163477        55.751368  0.208333            0.541667
+                   Otolaryngology - Head and Neck Surgery  23    6.653601          3.173580            3.262681        61.560356  0.043478            0.347826
+                                          General Surgery  23    6.143275          3.185535            3.229672        63.165534  0.260870            0.347826
+              South Pointe Hospital - Orthopaedic Surgery  23    7.627932          2.892453            2.938138        57.507724  0.130435            0.478261
+                                Obstetrics and Gynecology  22    4.991943          3.359326            3.387673        60.674727  0.090909            0.500000
+                                   Critical Care Medicine  22    5.120323          3.016970            3.123874        54.687199  0.136364            0.500000
+                   South Pointe Hospital - Anesthesiology  21    6.494236          3.026527            3.129262        56.811794  0.095238            0.285714
+                                   Cardiovascular Disease  20    6.722009          3.018106            3.079426        68.191785  0.100000            0.500000
+                               Radiation Oncology Physics  20    4.400776          3.244881            3.265119        55.214026  0.050000            0.150000
+                                                 Epilepsy  19    6.579714          3.227045            3.365196        57.881543  0.000000            0.105263
+                    Fairview Hospital - Internal Medicine  19    7.241403          2.968136            3.093134        59.050234  0.105263            0.473684
+
+PROGRAM SUMMARY - HIGHEST NEGATIVE-CASE RATES
+---------------------------------------------
+                                                PROGRAM  N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  MEAN_CONFIDENCE  GAP_RATE  NEGATIVE_CASE_RATE
+                                       Vascular Surgery 12    5.040998          2.886437            2.994015        57.930801  0.166667            0.750000
+                    Adult Cardiothoracic Anesthesiology 16    6.650864          3.200409            3.273218        62.096057  0.000000            0.625000
+                                             Pediatrics 52    4.324264          3.029747            3.122667        57.815519  0.192308            0.596154
+                                   Neurological Surgery 17    5.327418          3.110530            3.197575        62.158769  0.294118            0.588235
+                                             Psychiatry 24    6.153732          3.063458            3.163477        55.751368  0.208333            0.541667
+     Cleveland Clinic Akron General- Emergency Medicine 15    6.424924          3.003988            3.132061        50.574351  0.066667            0.533333
+                                                Urology 19    6.321608          2.979661            3.140720        64.345647  0.157895            0.526316
+                                 Critical Care Medicine 22    5.120323          3.016970            3.123874        54.687199  0.136364            0.500000
+                            Thoracic Surgery Integrated 10    5.673529          2.869738            2.964909        59.032248  0.100000            0.500000
+                                 Cardiovascular Disease 20    6.722009          3.018106            3.079426        68.191785  0.100000            0.500000
+                              Obstetrics and Gynecology 22    4.991943          3.359326            3.387673        60.674727  0.090909            0.500000
+                                      Internal Medicine 69    6.017526          3.176387            3.289269        56.021808  0.159420            0.478261
+            South Pointe Hospital - Orthopaedic Surgery 23    7.627932          2.892453            2.938138        57.507724  0.130435            0.478261
+                  Fairview Hospital - Internal Medicine 19    7.241403          2.968136            3.093134        59.050234  0.105263            0.473684
+                                     Infectious Disease 15    4.930678          3.204322            3.264344        58.525258  0.133333            0.466667
+                       Pulmonary Diseases/Critical Care 41    6.342080          3.078720            3.229440        57.688949  0.170732            0.463415
+Urogynecology and Reconstructive Pelvic Surgery (ObGyn) 13    6.304033          3.168870            3.325239        63.375879  0.076923            0.461538
+                                   Diagnostic Radiology 31    4.930431          3.271746            3.351800        59.353584  0.064516            0.451613
+                                         Anesthesiology 27    5.595659          3.045579            3.193272        60.894468  0.259259            0.444444
+                          Anatomic & Clinical Pathology 41    4.654793          3.106185            3.187157        59.800640  0.219512            0.439024
+
+PROGRAM SUMMARY - HIGHEST / LOWEST ACTIONABILITY
+------------------------------------------------
+Highest:
+                                                  PROGRAM  N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  MEAN_CONFIDENCE  GAP_RATE  NEGATIVE_CASE_RATE
+                             Intracranial Neurophysiology 12    7.004211          3.523942            3.570899        59.882210  0.000000            0.083333
+          Cleveland Clinic Akron General- Family Medicine 29    6.078554          3.426893            3.509615        49.109960  0.206897            0.275862
+                          Hospice and Palliative Medicine 16    5.598454          3.422442            3.497482        48.815463  0.000000            0.062500
+                                     Gynecologic Oncology 13    5.867615          3.259089            3.429978        61.627569  0.153846            0.230769
+Cleveland Clinic Akron General- Obstetrics and Gynecology 24    5.591028          3.191036            3.409906        56.422539  0.041667            0.250000
+                                         Gastroenterology 12    6.784443          3.309144            3.398510        58.338017  0.333333            0.416667
+                                Obstetrics and Gynecology 22    4.991943          3.359326            3.387673        60.674727  0.090909            0.500000
+   Health Care Administration, Leadership, and Management 10    7.554975          3.169508            3.370871        35.446492  0.000000            0.200000
+                                 Pediatric Anesthesiology 11    6.891628          3.352797            3.365385        57.241811  0.090909            0.363636
+                                                 Epilepsy 19    6.579714          3.227045            3.365196        57.881543  0.000000            0.105263
+                                     Diagnostic Radiology 31    4.930431          3.271746            3.351800        59.353584  0.064516            0.451613
+        Cleveland Clinic Akron General- Internal Medicine 16    6.567468          3.276004            3.350386        56.483832  0.187500            0.437500
+  Urogynecology and Reconstructive Pelvic Surgery (ObGyn) 13    6.304033          3.168870            3.325239        63.375879  0.076923            0.461538
+                                  Maternal Fetal Medicine 11    6.415534          3.217531            3.309461        61.821262  0.090909            0.272727
+               Cleveland Clinic Weston- Internal Medicine 36    6.944583          3.181024            3.290091        57.405037  0.138889            0.333333
+
+Lowest:
+                                                          PROGRAM  N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  MEAN_CONFIDENCE  GAP_RATE  NEGATIVE_CASE_RATE
+                                                              NaN 12    7.110345          2.624013            2.726929        56.789260  0.250000            0.416667
+                         Cleveland Clinic Weston- Plastic Surgery 11    8.033512          2.807576            2.837879        51.556606  0.000000            0.090909
+                      South Pointe Hospital - Orthopaedic Surgery 23    7.627932          2.892453            2.938138        57.507724  0.130435            0.478261
+                                      Thoracic Surgery Integrated 10    5.673529          2.869738            2.964909        59.032248  0.100000            0.500000
+                                                 Vascular Surgery 12    5.040998          2.886437            2.994015        57.930801  0.166667            0.750000
+                                                      Dermatology 28    5.109424          2.950477            3.075361        57.115893  0.214286            0.392857
+South Pointe Hospital - Osteopathic Neuromusculoskeletal Medicine 14    7.439719          2.955625            3.077037        51.978566  0.071429            0.357143
+                                           Cardiovascular Disease 20    6.722009          3.018106            3.079426        68.191785  0.100000            0.500000
+                               Cleveland Clinic Weston- Neurology 19    6.546947          3.060454            3.084849        59.726536  0.052632            0.157895
+                            Fairview Hospital - Internal Medicine 19    7.241403          2.968136            3.093134        59.050234  0.105263            0.473684
+                                                       Nephrology 11    6.324355          2.950934            3.108204        55.008091  0.090909            0.363636
+                          South Pointe Hospital - General Surgery 12    6.277523          2.888969            3.113346        53.225422  0.250000            0.416667
+                                                       Pediatrics 52    4.324264          3.029747            3.122667        57.815519  0.192308            0.596154
+                                           Critical Care Medicine 22    5.120323          3.016970            3.123874        54.687199  0.136364            0.500000
+                           South Pointe Hospital - Anesthesiology 21    6.494236          3.026527            3.129262        56.811794  0.095238            0.285714
+
+EVALUATOR PATTERNS - HIGHEST NEGATIVE-CASE RATES
+------------------------------------------------
+EVALUATOR_ID   N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  NEGATIVE_CASE_RATE
+         NaN 623    6.200033          2.955752            3.083641            0.420546
+
+EVALUATOR PATTERNS - ACTIONABILITY EXTREMES
+-------------------------------------------
+Highest:
+EVALUATOR_ID   N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  NEGATIVE_CASE_RATE
+         NaN 623    6.200033          2.955752            3.083641            0.420546
+
+Lowest:
+EVALUATOR_ID   N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  NEGATIVE_CASE_RATE
+         NaN 623    6.200033          2.955752            3.083641            0.420546
+
+LONGITUDINAL SUMMARY
+--------------------
+{
+  "n_repeated_evaluatees": 213,
+  "mean_change": -0.04863556244131462,
+  "median_change": 0.07669569999999748,
+  "percent_positive": 51.64319248826291,
+  "wilcoxon_statistic": 11110.0,
+  "wilcoxon_p": 0.9344760348730022,
+  "sign_test_p": 0.5819149929677926
+}
+
+NARRATIVE VS STRUCTURED AGREEMENT
+---------------------------------
+Cross-tabulation:
+NARRATIVE_BAND   HIGH  LOW  MIDDLE
+STRUCTURED_BAND                   
+HIGH              563    2      34
+LOW               546    4      49
+MIDDLE            564    2      34
+
+Agreement metric:
+{
+  "quadratic_weighted_kappa": 0.013199027440083388,
+  "n": 1798
+}

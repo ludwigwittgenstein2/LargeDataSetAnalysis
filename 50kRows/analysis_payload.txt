@@ -1,0 +1,242 @@
+GMETS 50K ANALYSIS PAYLOAD
+==========================
+
+METHOD
+------
+Narrative rows coded: 50000
+Unique evaluation events after aggregation: 1727
+Bulk model: openai-gpt-5-nano
+Unresolved row failures: 0
+
+This is a mixed inductive-confirmatory design:
+- prior Claude pilot supplied inductive/open-code discovery and category construction;
+- this run applies the emergent fixed taxonomy at scale;
+- taxonomy_gap_flag and negative_case_flag provide a saturation/negative-case audit;
+- statistics are computed at evaluation-event level to avoid pseudo-replication.
+
+ENVIRONMENT PREVALENCE
+----------------------
+CODE                                            CATEGORY    N   PERCENT
+ E01             Faculty teaching, feedback & mentorship 1661 96.178344
+ E15  No explicit learning-environment feature described 1512 87.550666
+ E07    Teaching infrastructure, didactics & conferences 1409 81.586566
+ E09           Psychological safety & relational climate 1290 74.696005
+ E03              Clinical workload, volume & complexity 1180 68.326578
+ E11               Wellbeing, fatigue & work-life strain 1109 64.215402
+ E02                    Supervision & graduated autonomy  995 57.614360
+ E13     Assessment, evaluation processes & expectations  982 56.861610
+ E12    Patient-care responsibility, acuity & continuity  962 55.703532
+ E05              Team & interprofessional collaboration  749 43.370006
+ E04        Rotation, subspecialty & procedural exposure  660 38.216561
+ E10 Workflow, systems, resources & operational barriers  449 25.998842
+ E08         Scholarly/research opportunities & barriers  294 17.023741
+ E14          Equity, inclusion & discrimination climate  279 16.155182
+ E06          Leadership & role-transition opportunities  154  8.917197
+
+DEVELOPMENTAL OUTCOMES
+----------------------
+CODE                                       CATEGORY    N   PERCENT
+ D04           Communication & teamwork development 1526 88.361320
+ D06  Feedback receptivity & self-directed learning 1332 77.127968
+ D01     Clinical reasoning & diagnostic competence 1196 69.253040
+ D03    Autonomy, confidence & independent judgment 1155 66.878981
+ D10     No explicit developmental effect described 1071 62.015055
+ D05   Professional identity & leadership formation  943 54.603358
+ D09                 Wellbeing, resilience & coping  808 46.786335
+ D07 Efficiency, organization & workflow management  791 45.801969
+ D08   Scholarship, research & teaching development  487 28.199189
+ D02              Procedural & technical competence  479 27.735958
+
+MECHANISMS
+----------
+CODE                                       CATEGORY    N   PERCENT
+ M01        Iterative feedback, coaching & modeling 1558 90.214244
+ M03 Direct supervision, scaffolding & availability 1485 85.987261
+ M06     Reflection, self-assessment & goal setting 1336 77.359583
+ M07    Structured teaching, didactics & simulation 1144 66.242038
+ M04           Autonomy, ownership & responsibility 1056 61.146497
+ M02        Repeated or graduated clinical exposure  867 50.202664
+ M09                No explicit mechanism described  844 48.870874
+ M05  Team interaction & interprofessional learning  700 40.532716
+ M08    Research, scholarship & deliberate practice  299 17.313260
+
+PERFORMANCE SIGNAL
+------------------
+    PERFORMANCE_SIGNAL    N   PERCENT
+              positive 1584 91.719745
+neutral_non_evaluative  117  6.774754
+                 mixed   14  0.810654
+               concern   12  0.694847
+
+CONFIDENCE / TAXONOMY GAPS
+--------------------------
+ N_ROWS  N_EVENTS  MEAN_ROW_CONFIDENCE  MEDIAN_ROW_CONFIDENCE  ZERO_CONFIDENCE_ROWS  ROWS_BELOW_THRESHOLD  EVENTS_NEEDING_ADJUDICATION  TAXONOMY_GAP_ROWS  TAXONOMY_GAP_PERCENT  NEGATIVE_CASE_ROWS
+  50000      1727            62.471075                   72.0                   300                  8412                         1059                186                 0.372                2649
+
+TOP GAP CONCEPTS
+----------------
+                                                     GAP_CONCEPT  N
+                                                             nan 70
+              no explicit learning-environment feature described  8
+              No explicit learning-environment feature described  2
+                       insufficient learning-context description  1
+             insufficient explicit learning-environment features  1
+insufficient explicit environmental/learning-development details  1
+               resilience to difficult cases affecting wellbeing  1
+                         evidence gaps and future research needs  1
+              disorganized rotation with conflicting supervision  1
+     insufficient hands-on pathology exposure (gross/microscopy)  1
+              insufficient domain content coverage for exam prep  1
+             literature gaps in pediatric cancer thrombosis risk  1
+Degrading attitude, poor psychological safety hindering learning  1
+                         Lack of history and physical experience  1
+                                2-3 word gap concept placeholder  1
+                      No explicit feature described in narrative  1
+                             short programs availability lacking  1
+                  inadequate learning environment infrastructure  1
+            gender-inclusive communication and listening clarity  1
+                                   insufficient narrative detail  1
+
+HIGH VS LOW STRUCTURED SCORE
+----------------------------
+CODE                                            CATEGORY  HIGH_N  HIGH_PERCENT  LOW_N  LOW_PERCENT  RISK_DIFFERENCE_PP  ODDS_RATIO  CI95_LOW  CI95_HIGH      P_VALUE        FDR_Q
+ E14          Equity, inclusion & discrimination climate      35      8.536585     91    22.195122          -13.658537    0.327179  0.217930   0.500057 6.632623e-08 9.948935e-07
+ E04        Rotation, subspecialty & procedural exposure     112     27.317073    170    41.463415          -14.146341    0.530596  0.396820   0.712204 2.660467e-05 9.976752e-05
+ E10 Workflow, systems, resources & operational barriers      81     19.756098    135    32.926829          -13.170732    0.501520  0.365933   0.691142 2.470586e-05 9.976752e-05
+ E03              Clinical workload, volume & complexity     232     56.585366    292    71.219512          -14.634146    0.526705  0.395193   0.704604 1.706720e-05 9.976752e-05
+ E11               Wellbeing, fatigue & work-life strain     222     54.146341    280    68.292683          -14.146341    0.548252  0.413298   0.729675 4.254554e-05 1.276366e-04
+ E12    Patient-care responsibility, acuity & continuity     198     48.292683    254    61.951220          -13.658537    0.573615  0.435170   0.758223 1.099968e-04 2.749920e-04
+ E02                    Supervision & graduated autonomy     204     49.756098    253    61.707317          -11.951220    0.614529  0.466247   0.811963 7.288689e-04 1.561862e-03
+ E15  No explicit learning-environment feature described     340     82.926829    370    90.243902           -7.317073    0.525097  0.349146   0.798331 2.834672e-03 5.315010e-03
+ E13     Assessment, evaluation processes & expectations     204     49.756098    246    60.000000          -10.243902    0.660194  0.501347   0.871176 3.982979e-03 6.638298e-03
+ E08         Scholarly/research opportunities & barriers      47     11.463415     75    18.292683           -6.829268    0.578329  0.392310   0.859490 7.870810e-03 1.180622e-02
+ E05              Team & interprofessional collaboration     170     41.463415    195    47.560976           -6.097561    0.780983  0.593195   1.029489 9.165115e-02 1.249788e-01
+ E06          Leadership & role-transition opportunities      29      7.073171     43    10.487805           -3.414634    0.649637  0.400639   1.065217 1.081557e-01 1.351946e-01
+ E07    Teaching infrastructure, didactics & conferences     313     76.341463    327    79.756098           -3.414634    0.819036  0.588935   1.141166 2.727060e-01 3.146607e-01
+ E01             Faculty teaching, feedback & mentorship     394     96.097561    387    94.390244            1.707317    1.463501  0.760791   2.763461 3.249505e-01 3.481612e-01
+ E09           Psychological safety & relational climate     297     72.439024    307    74.878049           -2.439024    0.881814  0.646795   1.203390 4.755746e-01 4.755746e-01
+
+CONTINUOUS SCORE ASSOCIATIONS
+-----------------------------
+CODE                                            CATEGORY  N_PRESENT  N_ABSENT  MEAN_PRESENT  MEAN_ABSENT      DIFF  MANN_WHITNEY_U      P_VALUE    FDR_Q
+ E14          Equity, inclusion & discrimination climate        257      1382      5.473390     6.250752 -0.777362        140668.0 1.160689e-07 0.000002
+ E10 Workflow, systems, resources & operational barriers        427      1212      5.720053     6.272886 -0.552833        219649.5 3.300466e-06 0.000025
+ E11               Wellbeing, fatigue & work-life strain       1052       587      5.958192     6.434724 -0.476532        266929.5 5.261768e-06 0.000026
+ E04        Rotation, subspecialty & procedural exposure        623      1016      5.902532     6.267641 -0.365109        276588.5 1.787657e-05 0.000067
+ E12    Patient-care responsibility, acuity & continuity        911       728      5.966781     6.331680 -0.364899        291520.0 2.545314e-05 0.000076
+ E08         Scholarly/research opportunities & barriers        268      1371      5.601002     6.232044 -0.631041        155717.0 7.774063e-05 0.000194
+ E03              Clinical workload, volume & complexity       1116       523      6.026468     6.347347 -0.320879        257618.0 1.274138e-04 0.000273
+ E15  No explicit learning-environment feature described       1434       205      6.073453     6.516432 -0.442979        124507.0 3.902083e-04 0.000732
+ E13     Assessment, evaluation processes & expectations        922       717      5.997077     6.298321 -0.301244        301773.0 2.474367e-03 0.004124
+ E02                    Supervision & graduated autonomy        945       694      6.019496     6.277777 -0.258282        300167.5 3.377067e-03 0.005066
+ E06          Leadership & role-transition opportunities        147      1492      5.609014     6.180078 -0.571063         96139.5 1.350723e-02 0.018419
+ E05              Team & interprofessional collaboration        724       915      6.039383     6.199658 -0.160275        313940.5 6.918306e-02 0.086479
+ E07    Teaching infrastructure, didactics & conferences       1337       302      6.137475     6.090716  0.046759        194393.5 3.130711e-01 0.361236
+ E01             Faculty teaching, feedback & mentorship       1576        63      6.139604     5.860069  0.279535         52907.5 3.756692e-01 0.377547
+ E09           Psychological safety & relational climate       1230       409      6.095549     6.229037 -0.133488        244218.5 3.775473e-01 0.377547
+
+CO-OCCURRENCE
+-------------
+CODE_A                                       CATEGORY_A CODE_B                                         CATEGORY_B    N  PERCENT_EVENTS
+   E01          Faculty teaching, feedback & mentorship    E15 No explicit learning-environment feature described 1463       84.713376
+   E01          Faculty teaching, feedback & mentorship    E07   Teaching infrastructure, didactics & conferences 1386       80.254777
+   E07 Teaching infrastructure, didactics & conferences    E15 No explicit learning-environment feature described 1291       74.753909
+   E01          Faculty teaching, feedback & mentorship    E09          Psychological safety & relational climate 1287       74.522293
+   E09        Psychological safety & relational climate    E15 No explicit learning-environment feature described 1199       69.426752
+   E01          Faculty teaching, feedback & mentorship    E03             Clinical workload, volume & complexity 1160       67.168500
+   E07 Teaching infrastructure, didactics & conferences    E09          Psychological safety & relational climate 1132       65.547192
+   E01          Faculty teaching, feedback & mentorship    E11              Wellbeing, fatigue & work-life strain 1100       63.694268
+   E03           Clinical workload, volume & complexity    E15 No explicit learning-environment feature described 1088       62.999421
+   E03           Clinical workload, volume & complexity    E07   Teaching infrastructure, didactics & conferences 1076       62.304574
+   E11            Wellbeing, fatigue & work-life strain    E15 No explicit learning-environment feature described 1054       61.030689
+   E07 Teaching infrastructure, didactics & conferences    E11              Wellbeing, fatigue & work-life strain 1019       59.004053
+   E01          Faculty teaching, feedback & mentorship    E02                   Supervision & graduated autonomy  988       57.209033
+   E01          Faculty teaching, feedback & mentorship    E13    Assessment, evaluation processes & expectations  980       56.745802
+   E03           Clinical workload, volume & complexity    E09          Psychological safety & relational climate  972       56.282571
+   E09        Psychological safety & relational climate    E11              Wellbeing, fatigue & work-life strain  966       55.935148
+   E01          Faculty teaching, feedback & mentorship    E12   Patient-care responsibility, acuity & continuity  955       55.298205
+   E13  Assessment, evaluation processes & expectations    E15 No explicit learning-environment feature described  949       54.950782
+   E03           Clinical workload, volume & complexity    E11              Wellbeing, fatigue & work-life strain  918       53.155761
+   E12 Patient-care responsibility, acuity & continuity    E15 No explicit learning-environment feature described  917       53.097858
+
+SENSITIZING CONSTRUCTS
+----------------------
+               CONSTRUCT  N_PRESENT  PERCENT_PRESENT  PERCENT_NOT_MENTIONED
+    psychological_safety       1308        75.738274              24.261726
+supervision_availability       1136        65.778807              34.221193
+        workload_fatigue        654        37.869137              62.130863
+       wellbeing_burnout        348        20.150550              79.849450
+ handoff_systems_failure        163         9.438332              90.561668
+ serious_patient_outcome         98         5.674580              94.325420
+     discrimination_bias         72         4.169079              95.830921
+        error_disclosure         59         3.416329              96.583671
+
+TEMPORAL TRENDS
+---------------
+CODE                                            CATEGORY  N_YEARS  SPEARMAN_RHO  P_VALUE    FDR_Q
+ E13     Assessment, evaluation processes & expectations       17     -0.700980 0.001719 0.025791
+ E01             Faculty teaching, feedback & mentorship       17     -0.470996 0.056351 0.215443
+ E08         Scholarly/research opportunities & barriers       17     -0.413243 0.099203 0.215443
+ E02                    Supervision & graduated autonomy       17     -0.411765 0.100540 0.215443
+ E09           Psychological safety & relational climate       17     -0.454936 0.066530 0.215443
+ E11               Wellbeing, fatigue & work-life strain       17     -0.519608 0.032537 0.215443
+ E05              Team & interprofessional collaboration       17     -0.416667 0.096157 0.215443
+ E07    Teaching infrastructure, didactics & conferences       17     -0.310239 0.225550 0.375917
+ E15  No explicit learning-environment feature described       17     -0.311275 0.223924 0.375917
+ E10 Workflow, systems, resources & operational barriers       17     -0.286765 0.264446 0.396670
+ E03              Clinical workload, volume & complexity       17     -0.244022 0.345237 0.401593
+ E06          Leadership & role-transition opportunities       17     -0.242647 0.348047 0.401593
+ E12    Patient-care responsibility, acuity & continuity       17     -0.259804 0.313917 0.401593
+ E14          Equity, inclusion & discrimination climate       17     -0.203556 0.433267 0.464215
+ E04        Rotation, subspecialty & procedural exposure       17     -0.019608 0.940458 0.940458
+
+FEEDBACK BY EVALUATION TYPE
+---------------------------
+                       EVALUATION_TYPE    N  MEAN_SPECIFICITY  MEAN_ACTIONABILITY
+                   Faculty of resident 1021          3.140610            3.232903
+           Faculty of program/hospital  201          2.782268            2.942651
+             Patient/staff of resident  115          2.937638            3.030132
+              Resident self evaluation  102          2.972923            3.084836
+           Resident of resident (peer)   79          3.128264            3.204227
+            Resident of service/clinic   72          2.995173            3.157886
+                   Resident of faculty   31          3.322701            3.450486
+Resident/Student/Faculty of conference   28          3.099443            3.204599
+
+PROGRAM SUMMARY
+---------------
+                                                  PROGRAM  N  MEAN_SCORE  MEAN_SPECIFICITY  MEAN_ACTIONABILITY  MEAN_CONFIDENCE  GAP_RATE  NEGATIVE_CASE_RATE
+                                          Family Medicine 88    6.255160          3.120462            3.207641        65.504616  0.011364            0.159091
+                                        Internal Medicine 65    5.867000          3.124741            3.268157        63.466382  0.092308            0.415385
+                                               Pediatrics 51    4.402139          2.984661            3.122295        61.530744  0.196078            0.490196
+                                                Neurology 37    4.972947          3.253604            3.301539        62.420729  0.108108            0.324324
+                            Anatomic & Clinical Pathology 37    4.683875          3.084875            3.182653        59.533790  0.189189            0.459459
+                                            Ophthalmology 37    7.122017          3.152954            3.215998        70.594511  0.027027            0.054054
+               Cleveland Clinic Weston- Internal Medicine 36    7.114910          3.208226            3.337103        61.998231  0.083333            0.333333
+                         Pulmonary Diseases/Critical Care 36    6.285196          3.149088            3.251565        63.243818  0.138889            0.388889
+                                      Orthopaedic Surgery 34    6.864159          3.060071            3.155611        66.521957  0.029412            0.294118
+                                              Dermatology 28    5.109424          3.060880            3.164542        64.395643  0.107143            0.357143
+          Cleveland Clinic Akron General- Family Medicine 28    6.116774          3.237007            3.340883        51.194873  0.071429            0.178571
+                                     Diagnostic Radiology 28    4.907666          3.205174            3.321607        68.772761  0.035714            0.357143
+                                           Anesthesiology 26    5.775024          3.093286            3.233439        65.149119  0.076923            0.269231
+                                               Psychiatry 23    6.079107          3.065553            3.161170        64.024274  0.086957            0.434783
+Cleveland Clinic Akron General- Obstetrics and Gynecology 22    5.353002          3.405556            3.454747        68.170370  0.000000            0.136364
+
+LONGITUDINAL SUMMARY
+--------------------
+{
+  "n_repeated_evaluatees": 180,
+  "mean_change": -0.0156964894444444,
+  "median_change": 0.02758700000000136,
+  "percent_positive": 50.55555555555556,
+  "wilcoxon_statistic": 7596.0,
+  "wilcoxon_p": 0.6811517358020583,
+  "sign_test_p": 0.763774058865874
+}
+
+NARRATIVE VS STRUCTURED AGREEMENT
+---------------------------------
+NARRATIVE_BAND   HIGH  LOW  MIDDLE
+STRUCTURED_BAND                   
+HIGH              508    3      36
+LOW               491    5      51
+MIDDLE            504    4      37

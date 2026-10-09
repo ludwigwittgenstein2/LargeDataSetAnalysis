@@ -1,0 +1,121 @@
+EVALUATION_TYPE,CODE,CATEGORY,N_EVENTS,N_PRESENT,PERCENT_PRESENT
+Faculty of resident,E01,"Faculty teaching, feedback & mentorship",1021,988,96.76787463271303
+Faculty of resident,E02,Supervision & graduated autonomy,1021,649,63.56513222331048
+Faculty of resident,E03,"Clinical workload, volume & complexity",1021,709,69.44172380019589
+Faculty of resident,E04,"Rotation, subspecialty & procedural exposure",1021,379,37.12047012732615
+Faculty of resident,E05,Team & interprofessional collaboration,1021,424,41.5279138099902
+Faculty of resident,E06,Leadership & role-transition opportunities,1021,96,9.40254652301665
+Faculty of resident,E07,"Teaching infrastructure, didactics & conferences",1021,842,82.46816846229187
+Faculty of resident,E08,Scholarly/research opportunities & barriers,1021,129,12.634671890303624
+Faculty of resident,E09,Psychological safety & relational climate,1021,763,74.73065621939276
+Faculty of resident,E10,"Workflow, systems, resources & operational barriers",1021,208,20.372184133202744
+Faculty of resident,E11,"Wellbeing, fatigue & work-life strain",1021,640,62.68364348677767
+Faculty of resident,E12,"Patient-care responsibility, acuity & continuity",1021,575,56.31733594515181
+Faculty of resident,E13,"Assessment, evaluation processes & expectations",1021,618,60.52889324191969
+Faculty of resident,E14,"Equity, inclusion & discrimination climate",1021,154,15.083251714005877
+Faculty of resident,E15,No explicit learning-environment feature described,1021,878,85.99412340842312
+Faculty of program/hospital,E01,"Faculty teaching, feedback & mentorship",201,192,95.5223880597015
+Faculty of program/hospital,E02,Supervision & graduated autonomy,201,77,38.308457711442784
+Faculty of program/hospital,E03,"Clinical workload, volume & complexity",201,146,72.636815920398
+Faculty of program/hospital,E04,"Rotation, subspecialty & procedural exposure",201,87,43.28358208955224
+Faculty of program/hospital,E05,Team & interprofessional collaboration,201,78,38.80597014925373
+Faculty of program/hospital,E06,Leadership & role-transition opportunities,201,11,5.472636815920398
+Faculty of program/hospital,E07,"Teaching infrastructure, didactics & conferences",201,173,86.06965174129353
+Faculty of program/hospital,E08,Scholarly/research opportunities & barriers,201,71,35.32338308457712
+Faculty of program/hospital,E09,Psychological safety & relational climate,201,138,68.65671641791045
+Faculty of program/hospital,E10,"Workflow, systems, resources & operational barriers",201,62,30.845771144278608
+Faculty of program/hospital,E11,"Wellbeing, fatigue & work-life strain",201,139,69.1542288557214
+Faculty of program/hospital,E12,"Patient-care responsibility, acuity & continuity",201,100,49.75124378109453
+Faculty of program/hospital,E13,"Assessment, evaluation processes & expectations",201,83,41.29353233830846
+Faculty of program/hospital,E14,"Equity, inclusion & discrimination climate",201,29,14.427860696517413
+Faculty of program/hospital,E15,No explicit learning-environment feature described,201,188,93.53233830845771
+Patient/staff of resident,E01,"Faculty teaching, feedback & mentorship",115,113,98.26086956521739
+Patient/staff of resident,E02,Supervision & graduated autonomy,115,52,45.21739130434783
+Patient/staff of resident,E03,"Clinical workload, volume & complexity",115,64,55.65217391304348
+Patient/staff of resident,E04,"Rotation, subspecialty & procedural exposure",115,16,13.91304347826087
+Patient/staff of resident,E05,Team & interprofessional collaboration,115,60,52.17391304347826
+Patient/staff of resident,E06,Leadership & role-transition opportunities,115,4,3.4782608695652173
+Patient/staff of resident,E07,"Teaching infrastructure, didactics & conferences",115,71,61.73913043478261
+Patient/staff of resident,E08,Scholarly/research opportunities & barriers,115,3,2.608695652173913
+Patient/staff of resident,E09,Psychological safety & relational climate,115,103,89.56521739130434
+Patient/staff of resident,E10,"Workflow, systems, resources & operational barriers",115,29,25.217391304347824
+Patient/staff of resident,E11,"Wellbeing, fatigue & work-life strain",115,70,60.869565217391305
+Patient/staff of resident,E12,"Patient-care responsibility, acuity & continuity",115,57,49.56521739130435
+Patient/staff of resident,E13,"Assessment, evaluation processes & expectations",115,59,51.30434782608695
+Patient/staff of resident,E14,"Equity, inclusion & discrimination climate",115,9,7.826086956521739
+Patient/staff of resident,E15,No explicit learning-environment feature described,115,103,89.56521739130434
+Resident self evaluation,E01,"Faculty teaching, feedback & mentorship",102,98,96.07843137254902
+Resident self evaluation,E02,Supervision & graduated autonomy,102,58,56.86274509803921
+Resident self evaluation,E03,"Clinical workload, volume & complexity",102,77,75.49019607843137
+Resident self evaluation,E04,"Rotation, subspecialty & procedural exposure",102,68,66.66666666666667
+Resident self evaluation,E05,Team & interprofessional collaboration,102,48,47.05882352941177
+Resident self evaluation,E06,Leadership & role-transition opportunities,102,15,14.705882352941176
+Resident self evaluation,E07,"Teaching infrastructure, didactics & conferences",102,92,90.19607843137256
+Resident self evaluation,E08,Scholarly/research opportunities & barriers,102,59,57.84313725490196
+Resident self evaluation,E09,Psychological safety & relational climate,102,68,66.66666666666667
+Resident self evaluation,E10,"Workflow, systems, resources & operational barriers",102,50,49.01960784313726
+Resident self evaluation,E11,"Wellbeing, fatigue & work-life strain",102,78,76.47058823529412
+Resident self evaluation,E12,"Patient-care responsibility, acuity & continuity",102,72,70.58823529411765
+Resident self evaluation,E13,"Assessment, evaluation processes & expectations",102,73,71.56862745098039
+Resident self evaluation,E14,"Equity, inclusion & discrimination climate",102,41,40.19607843137255
+Resident self evaluation,E15,No explicit learning-environment feature described,102,90,88.23529411764706
+Resident of resident (peer),E01,"Faculty teaching, feedback & mentorship",79,78,98.73417721518987
+Resident of resident (peer),E02,Supervision & graduated autonomy,79,53,67.0886075949367
+Resident of resident (peer),E03,"Clinical workload, volume & complexity",79,50,63.29113924050633
+Resident of resident (peer),E04,"Rotation, subspecialty & procedural exposure",79,29,36.70886075949367
+Resident of resident (peer),E05,Team & interprofessional collaboration,79,55,69.62025316455696
+Resident of resident (peer),E06,Leadership & role-transition opportunities,79,12,15.189873417721518
+Resident of resident (peer),E07,"Teaching infrastructure, didactics & conferences",79,63,79.74683544303798
+Resident of resident (peer),E08,Scholarly/research opportunities & barriers,79,4,5.063291139240507
+Resident of resident (peer),E09,Psychological safety & relational climate,79,71,89.87341772151899
+Resident of resident (peer),E10,"Workflow, systems, resources & operational barriers",79,23,29.11392405063291
+Resident of resident (peer),E11,"Wellbeing, fatigue & work-life strain",79,55,69.62025316455696
+Resident of resident (peer),E12,"Patient-care responsibility, acuity & continuity",79,43,54.43037974683544
+Resident of resident (peer),E13,"Assessment, evaluation processes & expectations",79,47,59.49367088607595
+Resident of resident (peer),E14,"Equity, inclusion & discrimination climate",79,13,16.455696202531644
+Resident of resident (peer),E15,No explicit learning-environment feature described,79,71,89.87341772151899
+Resident of service/clinic,E01,"Faculty teaching, feedback & mentorship",72,65,90.27777777777777
+Resident of service/clinic,E02,Supervision & graduated autonomy,72,48,66.66666666666667
+Resident of service/clinic,E03,"Clinical workload, volume & complexity",72,60,83.33333333333333
+Resident of service/clinic,E04,"Rotation, subspecialty & procedural exposure",72,42,58.333333333333336
+Resident of service/clinic,E05,Team & interprofessional collaboration,72,41,56.94444444444444
+Resident of service/clinic,E06,Leadership & role-transition opportunities,72,10,13.88888888888889
+Resident of service/clinic,E07,"Teaching infrastructure, didactics & conferences",72,61,84.72222222222223
+Resident of service/clinic,E08,Scholarly/research opportunities & barriers,72,13,18.055555555555557
+Resident of service/clinic,E09,Psychological safety & relational climate,72,55,76.38888888888889
+Resident of service/clinic,E10,"Workflow, systems, resources & operational barriers",72,38,52.77777777777778
+Resident of service/clinic,E11,"Wellbeing, fatigue & work-life strain",72,51,70.83333333333333
+Resident of service/clinic,E12,"Patient-care responsibility, acuity & continuity",72,46,63.888888888888886
+Resident of service/clinic,E13,"Assessment, evaluation processes & expectations",72,38,52.77777777777778
+Resident of service/clinic,E14,"Equity, inclusion & discrimination climate",72,14,19.444444444444443
+Resident of service/clinic,E15,No explicit learning-environment feature described,72,67,93.05555555555556
+Resident of faculty,E01,"Faculty teaching, feedback & mentorship",31,31,100.0
+Resident of faculty,E02,Supervision & graduated autonomy,31,15,48.38709677419355
+Resident of faculty,E03,"Clinical workload, volume & complexity",31,14,45.16129032258065
+Resident of faculty,E04,"Rotation, subspecialty & procedural exposure",31,6,19.35483870967742
+Resident of faculty,E05,Team & interprofessional collaboration,31,8,25.806451612903224
+Resident of faculty,E06,Leadership & role-transition opportunities,31,2,6.451612903225806
+Resident of faculty,E07,"Teaching infrastructure, didactics & conferences",31,24,77.41935483870968
+Resident of faculty,E08,Scholarly/research opportunities & barriers,31,4,12.903225806451612
+Resident of faculty,E09,Psychological safety & relational climate,31,25,80.64516129032258
+Resident of faculty,E10,"Workflow, systems, resources & operational barriers",31,4,12.903225806451612
+Resident of faculty,E11,"Wellbeing, fatigue & work-life strain",31,17,54.83870967741935
+Resident of faculty,E12,"Patient-care responsibility, acuity & continuity",31,15,48.38709677419355
+Resident of faculty,E13,"Assessment, evaluation processes & expectations",31,14,45.16129032258065
+Resident of faculty,E14,"Equity, inclusion & discrimination climate",31,3,9.67741935483871
+Resident of faculty,E15,No explicit learning-environment feature described,31,25,80.64516129032258
+Resident/Student/Faculty of conference,E01,"Faculty teaching, feedback & mentorship",28,26,92.85714285714286
+Resident/Student/Faculty of conference,E02,Supervision & graduated autonomy,28,10,35.714285714285715
+Resident/Student/Faculty of conference,E03,"Clinical workload, volume & complexity",28,15,53.57142857142857
+Resident/Student/Faculty of conference,E04,"Rotation, subspecialty & procedural exposure",28,11,39.285714285714285
+Resident/Student/Faculty of conference,E05,Team & interprofessional collaboration,28,7,25.0
+Resident/Student/Faculty of conference,E06,Leadership & role-transition opportunities,28,0,0.0
+Resident/Student/Faculty of conference,E07,"Teaching infrastructure, didactics & conferences",28,27,96.42857142857143
+Resident/Student/Faculty of conference,E08,Scholarly/research opportunities & barriers,28,3,10.714285714285714
+Resident/Student/Faculty of conference,E09,Psychological safety & relational climate,28,21,75.0
+Resident/Student/Faculty of conference,E10,"Workflow, systems, resources & operational barriers",28,12,42.857142857142854
+Resident/Student/Faculty of conference,E11,"Wellbeing, fatigue & work-life strain",28,14,50.0
+Resident/Student/Faculty of conference,E12,"Patient-care responsibility, acuity & continuity",28,15,53.57142857142857
+Resident/Student/Faculty of conference,E13,"Assessment, evaluation processes & expectations",28,18,64.28571428571429
+Resident/Student/Faculty of conference,E14,"Equity, inclusion & discrimination climate",28,7,25.0
+Resident/Student/Faculty of conference,E15,No explicit learning-environment feature described,28,25,89.28571428571429
