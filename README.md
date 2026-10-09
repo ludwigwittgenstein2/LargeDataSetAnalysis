@@ -1,577 +1,356 @@
 # Large-Scale GMETS Narrative Evaluation Analysis
 
-AI-assisted mixed-methods analysis of Graduate Medical Education (GME) narrative evaluations using a grounded-theory-informed fixed-taxonomy framework.
+**AI-assisted mixed-methods analysis of Graduate Medical Education narrative evaluations at 50K and 100K scale**
 
-This repository contains figures, statistical summaries, analysis outputs, and presentation materials from two large-scale GMETS narrative-analysis experiments:
+This repository contains the outputs of a large-scale analysis of Graduate Medical Education (GME) narrative evaluations using a **grounded-theory-informed, fixed-taxonomy framework**, large language models, and event-level statistical analysis.
 
-- `50kRows/` — analysis of 50,000 narrative responses
-- `100kRows/` — expanded analysis of 100,000 narrative responses
+The project investigates a central question:
 
-The project asks a broader question:
+> **What can large-scale narrative evaluations tell us about the learning environment, how learning happens, trainee development, feedback quality, and the contextual factors surrounding performance in Graduate Medical Education?**
 
-> **What can large-scale narrative evaluations tell us about the learning environment, mechanisms of learning, trainee development, feedback quality, and the contextual factors surrounding performance in Graduate Medical Education?**
+Two scaled analyses are included:
+
+| Analysis | Narrative rows | Evaluation events |
+|---|---:|---:|
+| 50K analysis | 50,000 | 1,727 |
+| 100K analysis | 100,000 | 1,888 |
+
+The 100K analysis is the primary expanded analysis presented in this repository.
 
 ---
 
-## Project Overview
+## Key Findings at a Glance
 
-Graduate Medical Education generates large volumes of narrative evaluation data that are difficult to analyze manually at scale.
+The 100K analysis suggests that:
 
-This project uses large language models together with statistical analysis to transform free-text evaluation narratives into structured qualitative and quantitative signals.
+- **Feedback and supervision form the dominant educational pathway.**
+- **Psychological safety appears to function as relational infrastructure for learning.**
+- **Trainee development is broader than technical competence**, with communication, reasoning, feedback receptivity, and autonomy dominating the developmental profile.
+- **Lower-scoring evaluations contain more descriptions of environmental friction**, including workload, workflow barriers, wellbeing strain, assessment context, and rotation-related factors.
+- **Narrative and structured performance signals show very low agreement**, suggesting that narrative comments may capture context and mechanisms rather than simply reproducing numerical ratings.
+- **Feedback is abundant but only moderately specific and actionable.**
+- **Only 0.43% of narrative rows were flagged as possible taxonomy gaps**, suggesting broad codebook coverage.
+- The 100K expansion adds substantially more **qualitative depth**, but only modestly increases the number of independent evaluation events.
 
-The analysis examines:
+---
 
-- the learning environment
-- mechanisms through which learning occurs
-- trainee developmental outcomes
-- feedback quality
+## Selected Results
+
+### Learning-Environment Prevalence
+
+![Learning-environment prevalence](100kRows/01_environment_prevalence.png)
+
+Faculty teaching, feedback, and mentorship appeared in nearly every evaluation event. Teaching infrastructure, psychological safety, workload, wellbeing, and supervision were also highly prevalent.
+
+---
+
+### How Learning Happens
+
+![Learning mechanisms](100kRows/03_mechanism_prevalence.png)
+
+The dominant mechanisms were iterative feedback/coaching, direct supervision/scaffolding, reflection, structured teaching, and progressively increasing autonomy.
+
+---
+
+### High- vs Low-Score Evaluation Context
+
+![High vs low structured-score odds ratios](100kRows/06_high_vs_low_score_odds_ratios.png)
+
+Several environmental themes appeared more often in lower-scoring evaluations, particularly workflow/system barriers, workload, rotation context, wellbeing strain, assessment context, and equity-related factors.
+
+These are **associations and should not be interpreted causally**.
+
+---
+
+# Project Overview
+
+Graduate Medical Education produces large volumes of narrative evaluation data.
+
+These comments contain information that may not be fully represented by structured numerical scores, including:
+
+- faculty teaching and mentorship
+- supervision
 - psychological safety
-- supervision and graduated autonomy
-- workload and wellbeing
-- workflow and systems barriers
-- equity and discrimination climate
-- relationships between narrative themes and structured scores
-- differences across evaluation types
-- temporal patterns
-- longitudinal trainee score change
-- taxonomy adequacy
-- negative and contradictory cases
-- non-obvious patterns visible only after integrating multiple analyses
+- workload and fatigue
+- workflow barriers
+- assessment context
+- clinical responsibility
+- feedback processes
+- autonomy
+- professional development
+- team relationships
+- equity and inclusion concerns
 
-The goal is not simply to classify comments.
+Manually analyzing tens of thousands of comments is difficult.
 
-The larger goal is to use narrative evaluation data to better understand the **educational ecosystem surrounding trainee development**.
+This project explores whether large language models can support a scalable qualitative workflow while preserving key principles of qualitative inquiry such as:
 
----
+- inductive discovery
+- constant comparison
+- negative-case analysis
+- taxonomy-gap auditing
+- theoretical integration
 
-# Analysis Design
-
-The project follows a mixed inductive-confirmatory design.
-
-An earlier pilot phase used inductive/open coding to identify recurring concepts in the narrative data.
-
-Those concepts informed a fixed taxonomy that was subsequently applied at larger scale.
-
-The large-scale workflow therefore combines:
-
-1. prior inductive qualitative discovery
-2. fixed-taxonomy LLM classification
-3. constant comparison
-4. taxonomy-gap analysis
-5. negative-case analysis
-6. event-level quantitative analysis
-7. subgroup comparisons
-8. structured-score associations
-9. temporal and longitudinal analysis
-10. final theoretical integration
-
-This is best understood as an **AI-scaled qualitative and mixed-methods analysis**, rather than a purely unsupervised topic-modeling exercise.
+The result is an **AI-scaled mixed-methods analysis** rather than a simple text-classification or topic-modeling exercise.
 
 ---
 
-# Study Scale
+# Analysis Workflow
 
-## 50K Analysis
+```mermaid
+flowchart TD
+    A[189,689 eligible deduplicated narratives]
+    --> B[Deterministic sampling]
 
-The initial scaled analysis included:
+    B --> C[100,000 narrative rows]
 
-- **50,000 narrative rows**
-- **1,727 evaluation events**
+    C --> D[GPT-5 nano fixed-taxonomy coding]
 
-This analysis established the initial large-scale patterns and provided an intermediate validation of the coding framework.
+    D --> E[Learning Environment]
+    D --> F[Learning Mechanisms]
+    D --> G[Developmental Outcomes]
+    D --> H[Performance and Feedback Signals]
+    D --> I[Safety / Gap / Negative-Case Signals]
 
-Results are available in:
+    E --> J[Aggregate by Evaluation Event]
+    F --> J
+    G --> J
+    H --> J
+    I --> J
 
-```text
-50kRows/
+    J --> K[1,888 Evaluation Events]
+
+    K --> L[Prevalence and Co-occurrence]
+    K --> M[Structured-Score Associations]
+    K --> N[Temporal and Longitudinal Analysis]
+    K --> O[Evaluation-Type and Program Analysis]
+
+    L --> P[Aggregate Results]
+    M --> P
+    N --> P
+    O --> P
+
+    P --> Q[Claude Sonnet 5 Synthesis]
+
+    Q --> R[Findings]
+    Q --> S[Recommendations]
+    Q --> T[Future Research Questions]
 ```
 
 ---
 
-## 100K Analysis
+# Study Design
 
-The expanded analysis processed:
+The project follows a **mixed inductive-confirmatory design**.
 
-- **100,000 narrative rows**
-- **1,888 unique evaluation events**
-- **253 programs**
-- **18 evaluation types**
-- **189,689 eligible deduplicated narrative responses before sampling**
-- **0 unresolved classification failures**
-- **mean narrative response length: approximately 176 characters**
+## Phase 1 — Inductive Discovery
 
-Results are available in:
+An earlier pilot used inductive/open coding to identify recurring concepts within the narrative corpus.
 
-```text
-100kRows/
-```
+These concepts informed the initial coding framework.
+
+## Phase 2 — Fixed-Taxonomy Application
+
+The resulting taxonomy was applied to increasingly large datasets:
+
+- 50,000 narrative rows
+- 100,000 narrative rows
+
+## Phase 3 — Constant Comparison and Auditing
+
+The pipeline retained mechanisms for identifying:
+
+- taxonomy gaps
+- negative cases
+- low-confidence classifications
+- subgroup differences
+- contradictory patterns
+
+## Phase 4 — Quantitative Integration
+
+Narrative codes were aggregated to the evaluation-event level and compared with:
+
+- structured scores
+- evaluation type
+- program
+- calendar time
+- repeated evaluatees
+
+## Phase 5 — Theoretical Synthesis
+
+Aggregate analytical results were synthesized into:
+
+- major findings
+- cross-table interpretations
+- non-obvious patterns
+- practical recommendations
+- a provisional conceptual model
 
 ---
 
-# Data Source and Sampling
+# 100K Analysis
 
-The 100K analysis was generated from the GMETS research dataset.
+The expanded analysis included:
 
-Narrative responses were eligible when they contained:
-
-- a valid evaluation-event identifier
-- an evaluation question
-- a non-trivial narrative response
-- at least 20 characters of usable text
-
-Trivial and placeholder responses were removed.
-
-Rows were deduplicated using evaluation event, item order, question, and response content.
-
-The most recent record was retained when duplicates existed.
-
-A deterministic hash-based sampling procedure was then used to select 100,000 rows from the larger eligible corpus.
-
-This makes the sampled dataset reproducible.
+| Measure | Value |
+|---|---:|
+| Eligible deduplicated narratives | 189,689 |
+| Narrative rows classified | **100,000** |
+| Unique evaluation events | **1,888** |
+| Programs | **253** |
+| Evaluation types | **18** |
+| Mean narrative length | ~176 characters |
+| Unresolved row failures | **0** |
+| Taxonomy-gap rate | **0.43%** |
 
 ---
 
 # Unit of Analysis
 
-A critical methodological distinction is the difference between a **narrative row** and an **evaluation event**.
+A critical distinction in this project is the difference between the **qualitative coding unit** and the **statistical unit of analysis**.
 
-## Narrative row
+## Narrative Row
 
-One deduplicated:
+The LLM classified one deduplicated:
 
 ```text
 QUESTION + TEXT_RESPONSE
 ```
 
-pair associated with an evaluation event.
+pair at a time.
 
-This is the qualitative unit classified by the LLM.
+This is the qualitative unit.
 
----
+## Evaluation Event
 
-## Evaluation event
+Multiple narrative rows could belong to the same evaluation event.
 
-Narrative rows belonging to the same evaluation were grouped using a de-identified:
+These rows were grouped using a de-identified:
 
 ```text
 EVALUATION_ID_HASH
 ```
 
-This is the principal unit used for event-level prevalence, co-occurrence, structured-score associations, and longitudinal analyses.
-
-A single evaluation event may contain many narrative rows.
+Most prevalence, co-occurrence, structured-score, and longitudinal analyses were conducted at this event level.
 
 Therefore:
 
-> **100,000 narratives provide qualitative depth, but they do not represent 100,000 statistically independent observations.**
+> **100,000 narratives represent qualitative depth; 1,888 evaluation events represent the primary statistical unit.**
 
-The 100K narrative corpus was aggregated into **1,888 evaluation events** for most inferential analyses.
-
----
-
-# Input Variables
-
-The analysis uses several types of information.
-
-## QUESTION
-
-The evaluation prompt or item that the evaluator or respondent was answering.
-
-This provides context for interpreting the free-text response.
-
----
-
-## TEXT_RESPONSE
-
-The narrative evaluation comment.
-
-This is the primary qualitative evidence analyzed by the LLM.
-
----
-
-## EVALUATION_ID_HASH
-
-A de-identified identifier representing one evaluation event.
-
-Multiple narrative rows can belong to the same event.
-
----
-
-## ITEM_ORDER
-
-The position of the question within the evaluation instrument.
-
-This was used in deduplication and row identity.
-
----
-
-## Structured Performance Score
-
-The event-level structured score was calculated from available scaled option values.
-
-It was used for:
-
-- high-versus-low score comparisons
-- continuous score associations
-- longitudinal analyses
-
----
-
-## EVALUATED_DATE / YEAR
-
-The date of the evaluation.
-
-This was used to study descriptive patterns over calendar time.
-
----
-
-## EVALUATION_TYPE
-
-Represents who is evaluating whom, or the type of evaluation instrument.
-
-Examples include:
-
-- faculty evaluating residents
-- residents evaluating faculty
-- peer evaluations
-- self evaluations
-- patient/staff evaluations
-- program or hospital evaluations
-
----
-
-## Program and Organizational Context
-
-Program, department, institute, and related metadata were used for subgroup analysis.
-
----
-
-## Trainee and Evaluator Identifiers
-
-De-identified identifiers allow repeated observations to be studied without exposing individual names.
+This distinction prevents the 100,000 narrative rows from being incorrectly treated as 100,000 statistically independent observations.
 
 ---
 
 # AI Models
 
-## Large-Scale Narrative Coding
+## Large-Scale Coding
 
 ```text
 openai-gpt-5-nano
 ```
 
-GPT-5 nano was used for large-scale structured classification of narrative responses.
+Used for structured classification of individual narrative rows.
 
-The model applied the previously developed fixed taxonomy to each narrative row.
+Outputs included:
+
+- learning-environment codes
+- learning-mechanism codes
+- developmental-outcome codes
+- narrative performance signal
+- feedback specificity
+- feedback actionability
+- classification confidence
+- sensitizing constructs
+- taxonomy-gap flags
+- negative-case flags
 
 ---
 
-## Final Interpretation
+## Aggregate Interpretation
 
 ```text
 claude-sonnet-5
 ```
 
-Claude Sonnet 5 was used after the quantitative analysis to interpret aggregate tables and identify:
+Used after statistical aggregation to interpret:
 
-- cross-chart patterns
-- theoretical relationships
-- non-obvious findings
-- recommendations
-- action steps
-- possible future research directions
+- cross-table patterns
+- subgroup differences
+- unusual findings
+- possible theoretical relationships
+- practical recommendations
+- future research directions
 
-The final interpretation model received aggregate analytical outputs rather than raw narrative text.
-
-GPT-5 nano served as a fallback interpretation model.
+The final synthesis model received **aggregate analytical results rather than raw narrative text**.
 
 ---
 
 # Coding Framework
 
-Each narrative could receive multiple codes.
-
-The taxonomy contains three primary conceptual domains:
-
-1. Learning Environment
-2. Learning Mechanisms
-3. Developmental Outcomes
-
-Additional outputs captured feedback quality, performance signal, model confidence, sensitizing constructs, taxonomy gaps, and negative cases.
-
----
-
-# Learning Environment
+## Learning Environment
 
 The learning-environment taxonomy includes:
 
-### E01 — Faculty Teaching, Feedback, and Mentorship
-
-Teaching, coaching, mentoring, role modeling, and faculty feedback.
-
-### E02 — Supervision and Graduated Autonomy
-
-Availability of supervision, oversight, independence, and increasing responsibility.
-
-### E03 — Clinical Workload, Volume, and Complexity
-
-Patient volume, workload, acuity, complexity, and clinical intensity.
-
-### E04 — Rotation, Subspecialty, and Procedural Exposure
-
-Breadth and quality of clinical or procedural exposure.
-
-### E05 — Team and Interprofessional Collaboration
-
-Interactions with multidisciplinary and interprofessional teams.
-
-### E06 — Leadership and Role-Transition Opportunities
-
-Leadership opportunities and transition into increasing professional responsibility.
-
-### E07 — Teaching Infrastructure, Didactics, and Conferences
-
-Formal teaching sessions, conferences, curriculum, simulation, and educational infrastructure.
-
-### E08 — Scholarship and Research Opportunities
-
-Research, scholarly activity, academic mentorship, and barriers to scholarship.
-
-### E09 — Psychological Safety and Relational Climate
-
-Interpersonal trust, respect, safe communication, and ability to seek help or disclose uncertainty.
-
-### E10 — Workflow, Systems, Resources, and Operational Barriers
-
-Operational friction, inefficient systems, resource limitations, and workflow problems.
-
-### E11 — Wellbeing, Fatigue, and Work-Life Strain
-
-Fatigue, stress, burnout, wellbeing, and work-life strain.
-
-### E12 — Patient-Care Responsibility, Acuity, and Continuity
-
-Responsibility for patients, continuity, complexity, and ownership of care.
-
-### E13 — Assessment, Evaluation Processes, and Expectations
-
-Clarity and quality of assessment systems, expectations, and evaluation processes.
-
-### E14 — Equity, Inclusion, and Discrimination Climate
-
-Bias, discrimination, fairness, equity, and inclusion.
-
-### E15 — No Explicit Learning-Environment Feature
-
-Used when the narrative row does not clearly describe a learning-environment feature.
+| Code | Domain |
+|---|---|
+| E01 | Faculty teaching, feedback, and mentorship |
+| E02 | Supervision and graduated autonomy |
+| E03 | Clinical workload, volume, and complexity |
+| E04 | Rotation, subspecialty, and procedural exposure |
+| E05 | Team and interprofessional collaboration |
+| E06 | Leadership and role-transition opportunities |
+| E07 | Teaching infrastructure, didactics, and conferences |
+| E08 | Scholarship and research opportunities |
+| E09 | Psychological safety and relational climate |
+| E10 | Workflow, systems, resources, and operational barriers |
+| E11 | Wellbeing, fatigue, and work-life strain |
+| E12 | Patient-care responsibility, acuity, and continuity |
+| E13 | Assessment, evaluation processes, and expectations |
+| E14 | Equity, inclusion, and discrimination climate |
+| E15 | No explicit learning-environment feature |
 
 ---
 
-# Learning Mechanisms
+## Learning Mechanisms
 
-The analysis also identifies **how learning is described as occurring**.
-
-These mechanisms include:
-
-### M01 — Iterative Feedback, Coaching, and Modeling
-
-Repeated feedback, coaching, demonstration, and faculty modeling.
-
-### M02 — Repeated or Graduated Clinical Exposure
-
-Learning through repeated clinical encounters or increasingly complex exposure.
-
-### M03 — Direct Supervision, Scaffolding, and Availability
-
-Learning through supervision, guidance, support, and progressive scaffolding.
-
-### M04 — Autonomy, Ownership, and Responsibility
-
-Development through increasing independence and ownership.
-
-### M05 — Team Interaction and Interprofessional Learning
-
-Learning from peers, teams, staff, and collaborative practice.
-
-### M06 — Reflection, Self-Assessment, and Goal Setting
-
-Learning through reflection, self-monitoring, feedback incorporation, and goal formation.
-
-### M07 — Structured Teaching, Didactics, and Simulation
-
-Formal educational activities and structured instruction.
-
-### M08 — Research, Scholarship, and Deliberate Practice
-
-Learning through research activity, scholarly development, or focused practice.
-
-### M09 — No Explicit Mechanism
-
-Used when the narrative contains no clearly identifiable learning mechanism.
+| Code | Mechanism |
+|---|---|
+| M01 | Iterative feedback, coaching, and modeling |
+| M02 | Repeated or graduated clinical exposure |
+| M03 | Direct supervision, scaffolding, and availability |
+| M04 | Autonomy, ownership, and responsibility |
+| M05 | Team interaction and interprofessional learning |
+| M06 | Reflection, self-assessment, and goal setting |
+| M07 | Structured teaching, didactics, and simulation |
+| M08 | Research, scholarship, and deliberate practice |
+| M09 | No explicit mechanism |
 
 ---
 
-# Developmental Outcomes
+## Developmental Outcomes
 
-The analysis identifies what kinds of trainee development are described.
-
-### D01 — Clinical Reasoning and Diagnostic Competence
-
-Clinical reasoning, diagnostic thinking, judgment, and decision-making.
-
-### D02 — Procedural and Technical Competence
-
-Procedural skills and technical ability.
-
-### D03 — Autonomy, Confidence, and Independent Judgment
-
-Growth in independence, ownership, confidence, and professional judgment.
-
-### D04 — Communication and Teamwork Development
-
-Communication skills, teamwork, collaboration, and interpersonal effectiveness.
-
-### D05 — Professional Identity and Leadership Formation
-
-Professional identity, leadership, maturity, and role development.
-
-### D06 — Feedback Receptivity and Self-Directed Learning
-
-Ability to receive feedback, reflect, set goals, and direct one's own learning.
-
-### D07 — Efficiency, Organization, and Workflow Management
-
-Time management, organization, prioritization, and clinical efficiency.
-
-### D08 — Scholarship, Research, and Teaching Development
-
-Research development, academic growth, scholarship, and teaching ability.
-
-### D09 — Wellbeing, Resilience, and Coping
-
-Resilience, wellbeing, adaptive coping, and management of stress.
-
-### D10 — No Explicit Developmental Effect
-
-Used when no clear developmental outcome is described.
-
----
-
-# Additional LLM Outputs
-
-## Performance Signal
-
-Each narrative was classified as:
-
-- positive
-- mixed
-- concern
-- neutral / non-evaluative
-
----
-
-## Specificity
-
-Model-rated feedback specificity on a **1–5 scale**.
-
-Higher scores indicate more concrete and behavior-specific feedback.
-
----
-
-## Actionability
-
-Model-rated feedback actionability on a **1–5 scale**.
-
-Higher scores indicate clearer guidance about what the learner should do next.
-
----
-
-## Model Confidence
-
-The model generated a confidence score from:
-
-```text
-0–100
-```
-
-This should be treated as a model-generated heuristic and **not as a calibrated probability**.
-
----
-
-# Sensitizing Constructs
-
-The pipeline explicitly searched for higher-level constructs including:
-
-- psychological safety
-- supervision availability
-- workload and fatigue
-- wellbeing and burnout
-- discrimination and bias
-- handoff or systems failure
-- error disclosure
-- serious patient outcomes
-
-These constructs were included because they may represent educationally or clinically important contextual signals.
-
----
-
-# Taxonomy-Gap Detection
-
-The model identified cases in which an important concept appeared poorly represented by the existing taxonomy.
-
-These were marked using a:
-
-```text
-TAXONOMY_GAP_FLAG
-```
-
-A short proposed gap concept was also generated.
-
-Only approximately:
-
-```text
-0.43%
-```
-
-of the 100,000 narratives were flagged as potential taxonomy gaps.
-
-This suggests that the broad codebook is approaching conceptual saturation.
-
-However, several gap labels were:
-
-- missing values
-- duplicated wording
-- variants of existing categories
-- extremely narrow specialty-specific concepts
-
-Further human review is therefore required before extending the taxonomy.
-
----
-
-# Negative Cases
-
-The analysis also identifies narratives that contradict or challenge dominant patterns.
-
-These negative cases are important because large-scale qualitative analysis should not focus only on majority patterns.
-
-Rare adverse or contradictory cases may provide important insights into:
-
-- educational problems
-- safety issues
-- supervision failures
-- workload stress
-- bias
-- system-level problems
+| Code | Developmental outcome |
+|---|---|
+| D01 | Clinical reasoning and diagnostic competence |
+| D02 | Procedural and technical competence |
+| D03 | Autonomy, confidence, and independent judgment |
+| D04 | Communication and teamwork development |
+| D05 | Professional identity and leadership formation |
+| D06 | Feedback receptivity and self-directed learning |
+| D07 | Efficiency, organization, and workflow management |
+| D08 | Scholarship, research, and teaching development |
+| D09 | Wellbeing, resilience, and coping |
+| D10 | No explicit developmental effect |
 
 ---
 
 # 100K Results
 
-## Learning-Environment Prevalence
+## Learning Environment
 
 The most prevalent environment categories were:
 
-| Learning-environment category | Percentage of evaluation events |
+| Learning-environment category | Events |
 |---|---:|
 | Faculty teaching, feedback, and mentorship | **97.5%** |
 | Teaching infrastructure, didactics, and conferences | **86.3%** |
@@ -583,71 +362,58 @@ The most prevalent environment categories were:
 | Patient-care responsibility and continuity | **64.6%** |
 | Team and interprofessional collaboration | **51.8%** |
 | Rotation and procedural exposure | **48.3%** |
-| Workflow and system barriers | **33.6%** |
+| Workflow/system barriers | **33.6%** |
 | Equity and discrimination climate | **24.1%** |
 | Scholarship and research opportunities | **21.7%** |
 | Leadership opportunities | **12.8%** |
 
-These are event-level prevalence estimates.
+These are **event-level prevalence estimates**.
 
-A category only needs to appear in one narrative row within an evaluation event for that event to count as containing the theme.
+A theme only needs to appear once within an evaluation event for that event to count as containing the theme.
 
 ---
 
-# Developmental Outcomes
+## Developmental Outcomes
 
-The most frequently identified developmental outcomes were:
-
-| Developmental outcome | Percentage of evaluation events |
+| Developmental outcome | Events |
 |---|---:|
-| Communication and teamwork development | **93.1%** |
+| Communication and teamwork | **93.1%** |
 | Feedback receptivity and self-directed learning | **84.5%** |
-| Clinical reasoning and diagnostic competence | **75.6%** |
-| Autonomy, confidence, and independent judgment | **73.1%** |
+| Clinical reasoning | **75.6%** |
+| Autonomy and independent judgment | **73.1%** |
 | Professional identity and leadership formation | **63.9%** |
 | Wellbeing, resilience, and coping | **59.2%** |
 | Efficiency and organization | **51.4%** |
 | Scholarship, research, and teaching development | **34.4%** |
 | Procedural and technical competence | **33.5%** |
 
-One notable finding is that developmental language is dominated by:
-
-- communication
-- reasoning
-- feedback receptivity
-- self-directed learning
-- autonomy
-- professional growth
-
-rather than only procedural or technical competence.
+The developmental profile suggests that GME narratives frequently capture **relational, cognitive, reflective, and professional development**, not only technical competence.
 
 ---
 
-# Learning Mechanisms
+## Learning Mechanisms
 
-The most prevalent mechanisms were:
-
-| Learning mechanism | Percentage of evaluation events |
+| Learning mechanism | Events |
 |---|---:|
 | Iterative feedback, coaching, and modeling | **94.1%** |
-| Direct supervision, scaffolding, and availability | **90.0%** |
-| Reflection, self-assessment, and goal setting | **84.3%** |
-| Structured teaching, didactics, and simulation | **73.0%** |
-| Autonomy, ownership, and responsibility | **71.9%** |
-| Repeated or graduated clinical exposure | **57.2%** |
-| Team interaction and interprofessional learning | **50.4%** |
-| Research, scholarship, and deliberate practice | **22.6%** |
+| Direct supervision and scaffolding | **90.0%** |
+| Reflection and self-assessment | **84.3%** |
+| Structured teaching and didactics | **73.0%** |
+| Autonomy and responsibility | **71.9%** |
+| Repeated clinical exposure | **57.2%** |
+| Team interaction | **50.4%** |
+| Research/scholarship/deliberate practice | **22.6%** |
 
-The mechanism profile suggests a recurring educational process:
+Together, these results suggest a recurring developmental sequence:
 
 ```text
 Clinical experience
         ↓
-Observation and supervision
+Supervision
         ↓
 Feedback and coaching
         ↓
-Reflection and self-assessment
+Reflection
         ↓
 Scaffolding
         ↓
@@ -656,109 +422,83 @@ Increasing autonomy
 
 ---
 
-# Major Finding 1: Feedback and Supervision Form the Educational Engine
+# Major Finding 1 — Feedback and Supervision Form the Educational Engine
 
-Faculty teaching, feedback, and mentorship occurred in almost every evaluation event.
+Faculty teaching and feedback appeared in nearly every evaluation event.
 
-Similarly, feedback/coaching and supervision/scaffolding were the dominant mechanisms through which learning was described.
+At the mechanism level:
 
-Taken together, these findings suggest that the GMETS learning environment is highly **feedback-centered and supervision-dependent**.
+- feedback/coaching appeared in approximately **94%**
+- supervision/scaffolding appeared in approximately **90%**
+- reflection appeared in approximately **84%**
 
-Education appears to emerge not from isolated teaching events, but from repeated interaction between:
+This suggests that the dominant educational process is not an isolated teaching event.
 
-- clinical experience
-- faculty guidance
-- supervision
-- coaching
-- reflection
-- increasing responsibility
+Instead, learning appears to occur through repeated interaction among:
+
+```text
+clinical experience
++
+supervision
++
+feedback
++
+reflection
++
+increasing responsibility
+```
 
 ---
 
-# Major Finding 2: Psychological Safety Functions as Educational Infrastructure
+# Major Finding 2 — Psychological Safety Is Relational Infrastructure
 
-Psychological safety appeared in approximately:
+Psychological safety appeared in approximately **80.8%** of evaluation events.
 
-```text
-80.8%
-```
+When explicitly examined as a sensitizing construct, psychological-safety signals appeared in approximately **83.7%** of events.
 
-of evaluation events as a learning-environment category.
+Supervision availability appeared in approximately **76.6%**.
 
-When explicitly analyzed as a sensitizing construct, psychological-safety signals appeared in approximately:
-
-```text
-83.7%
-```
-
-of events.
-
-Supervision availability appeared in approximately:
-
-```text
-76.6%
-```
-
-of events.
-
-This suggests that learning depends not only on educational content, but also on whether trainees can:
+This suggests that an effective learning environment may depend partly on whether trainees can:
 
 - ask questions
 - disclose uncertainty
 - seek help
-- make mistakes safely
+- receive supervision
 - communicate openly
-- access supervision
+- make mistakes in a learning-oriented environment
 
 Psychological safety and supervision may therefore represent **relational infrastructure for learning**.
 
 ---
 
-# Major Finding 3: Workload and Wellbeing Are Part of the Learning Environment
+# Major Finding 3 — Workload and Wellbeing Are Educational Context
 
-Clinical workload and complexity appeared in approximately:
+Clinical workload/complexity appeared in approximately **74%** of events.
 
-```text
-74.0%
-```
+Wellbeing, fatigue, and work-life strain appeared in approximately **73%**.
 
-of evaluation events.
+Explicit sensitizing constructs included:
 
-Wellbeing, fatigue, and work-life strain appeared in approximately:
+| Construct | Events |
+|---|---:|
+| Psychological safety | **83.7%** |
+| Supervision availability | **76.6%** |
+| Workload/fatigue | **46.9%** |
+| Wellbeing/burnout | **27.1%** |
+| Handoff/system failure | **11.8%** |
+| Serious patient outcome | **6.5%** |
+| Discrimination/bias | **6.4%** |
+| Error disclosure | **4.4%** |
 
-```text
-73.4%
-```
+Rare constructs should not be interpreted as unimportant.
 
-of events.
-
-Explicit workload/fatigue signals appeared in approximately:
-
-```text
-46.9%
-```
-
-of events.
-
-Explicit wellbeing/burnout signals appeared in approximately:
-
-```text
-27.1%
-```
-
-of events.
-
-This suggests that clinical education cannot be separated completely from the conditions under which the clinical work occurs.
-
-Learning, supervision, workload, fatigue, and wellbeing repeatedly appear within the same evaluation ecosystem.
+Some may function as **sentinel educational or safety signals**.
 
 ---
 
-# Major Finding 4: Lower-Scoring Evaluations Contain More Environmental Friction
+# Major Finding 4 — Lower Scores Contain More Environmental Friction
 
-Several environmental categories appeared significantly more often in lower-scoring evaluation events.
-
-Examples include:
+Several themes were substantially more frequent in lower-score evaluation events.
 
 | Category | High-score events | Low-score events | Odds Ratio |
 |---|---:|---:|---:|
@@ -770,65 +510,56 @@ Examples include:
 | Assessment expectations | 56.4% | 66.9% | **0.64** |
 | Wellbeing/fatigue | 66.7% | 74.0% | **0.70** |
 
-An odds ratio below 1 indicates that the theme appeared more often in the lower-score group.
+These findings do **not** establish that environmental factors caused lower performance.
 
-These results should **not** be interpreted as showing that workload, equity issues, or workflow barriers caused lower performance.
+A more cautious interpretation is:
 
-A more defensible interpretation is:
+> **Lower-scoring evaluations contain more descriptions of constraints, burden, workflow problems, and environmental context.**
 
-> **Lower-scoring evaluations tend to contain richer descriptions of friction, constraints, burden, and environmental context.**
-
-Narrative comments may therefore help explain structured scores rather than merely repeat them.
+Narrative comments may therefore help explain a structured score rather than merely duplicate it.
 
 ---
 
-# Major Finding 5: Narrative Evaluations Are Overwhelmingly Positive
+# Major Finding 5 — Narrative Performance Is Overwhelmingly Positive
 
-The narrative performance signal was:
+Narrative performance signals were:
 
-| Narrative performance signal | Percentage |
+| Signal | Percentage |
 |---|---:|
 | Positive | **93.1%** |
 | Neutral / non-evaluative | **5.7%** |
 | Mixed | **0.8%** |
 | Concern | **0.4%** |
 
-The overwhelming positive skew creates an important class-imbalance problem.
+This creates substantial class imbalance.
 
-Rare mixed and concern cases may be disproportionately important for:
+Rare mixed and concern cases may be particularly valuable for:
 
-- educational quality improvement
 - trainee support
 - patient safety
-- identifying system failures
-- detecting bias or discrimination
-- identifying supervision problems
+- educational quality improvement
+- supervision review
+- system-level learning
 
 ---
 
-# Major Finding 6: Narrative and Structured Scores Capture Different Information
+# Major Finding 6 — Narrative and Structured Scores Capture Different Signals
 
-One of the most striking findings was the very low agreement between narrative-derived performance bands and structured numerical-score bands.
-
-The quadratic weighted kappa was approximately:
+Agreement between narrative-derived performance bands and structured numerical-score bands was extremely low.
 
 ```text
-κ = 0.013
+Quadratic weighted κ ≈ 0.013
 ```
 
-This represents essentially negligible agreement.
+This suggests that the two sources may capture different dimensions of the evaluation process.
 
-Many low structured-score evaluations still contained overwhelmingly positive narrative language.
-
-This suggests that narrative comments and structured scores may be capturing different dimensions of the evaluation process.
-
-Structured scores may primarily represent:
+Structured scores may emphasize:
 
 ```text
 performance judgment
 ```
 
-while narrative comments may be richer sources of:
+while narrative text may more strongly represent:
 
 ```text
 context
@@ -838,100 +569,83 @@ strengths
 barriers
 supervision
 workload
-developmental information
+development
 ```
 
-This raises an important hypothesis:
+This leads to one of the central hypotheses from the study:
 
-> **Narrative evaluations may be more useful for explaining the context and mechanisms surrounding performance than for reproducing the numerical performance score itself.**
+> **Narrative evaluations may be more useful for explaining the conditions and mechanisms surrounding performance than for reproducing the numerical performance score itself.**
 
 ---
 
-# Major Finding 7: Feedback Is Common but Only Moderately Specific
+# Major Finding 7 — Feedback Has a Quantity–Quality Gap
 
-Feedback and coaching appear throughout the evaluation corpus.
+Feedback is extremely common.
 
-However, feedback-quality ratings generally cluster around approximately:
+Its specificity and actionability are only moderate.
 
-```text
-3 / 5
-```
+Examples:
 
-for both specificity and actionability.
-
-For example:
-
-| Evaluation type | Mean specificity | Mean actionability |
+| Evaluation type | Specificity | Actionability |
 |---|---:|---:|
 | Faculty of resident | 3.15 | 3.23 |
 | Faculty of program/hospital | 2.78 | 2.94 |
 | Patient/staff of resident | 2.91 | 3.02 |
 | Resident self evaluation | 2.94 | 3.06 |
 | Resident of service/clinic | 2.97 | 3.13 |
-| Resident of resident / peer | 3.18 | 3.28 |
+| Resident peer evaluation | 3.18 | 3.28 |
 | Resident of faculty | 3.27 | 3.34 |
 
-This reveals a **feedback quantity–quality gap**.
+The intervention target may therefore be:
 
-The system already produces substantial amounts of feedback.
+> **better feedback rather than simply more feedback.**
 
-The more important intervention may therefore be:
-
-> **Improve the specificity and actionability of existing feedback rather than simply increasing feedback volume.**
-
-A useful feedback structure may be:
+A possible feedback framework is:
 
 ```text
 Observed behavior
-        ↓
+      ↓
 Impact / context
-        ↓
+      ↓
 Specific next step
 ```
 
 ---
 
-# Major Finding 8: No Simple System-Wide Longitudinal Improvement Was Observed
+# Major Finding 8 — No Simple Universal Longitudinal Improvement
 
-Among trainees with repeated structured-score observations:
+Among evaluatees with repeated observations:
 
 ```text
 N = 213
 ```
 
-approximately:
+Results included:
 
 ```text
-51.6%
+Mean first-to-last change   ≈ -0.05
+Median first-to-last change ≈ +0.08
+Positive change             ≈ 51.6%
 ```
 
-showed a positive first-to-last score change.
+There was no statistically significant overall first-to-last score shift.
 
-However:
+This should not be interpreted as evidence that trainees do not develop.
 
-```text
-Mean change   ≈ -0.05
-Median change ≈ +0.08
-```
+A simple first-versus-last comparison does not account for:
 
-and neither the Wilcoxon test nor sign test indicated a significant overall shift.
-
-This does not mean trainees fail to develop.
-
-Rather, a simple first-versus-last score comparison is likely too crude because evaluations differ across:
-
-- rotations
-- evaluators
-- specialties
-- clinical difficulty
+- evaluator differences
+- rotation difficulty
+- specialty differences
 - evaluation instruments
-- time intervals
+- time spacing
+- repeated observations
 
-A mixed-effects longitudinal model is therefore a more appropriate next step.
+Longitudinal mixed-effects modeling is a more appropriate next step.
 
 ---
 
-# Major Finding 9: The Taxonomy Appears Close to Saturation
+# Major Finding 9 — The Taxonomy Appears Broadly Mature
 
 Only:
 
@@ -939,155 +653,107 @@ Only:
 430 / 100,000 rows
 ```
 
-were flagged as possible taxonomy gaps.
-
-This corresponds to approximately:
+were flagged as possible taxonomy gaps:
 
 ```text
 0.43%
 ```
 
-of the corpus.
-
 Many gap outputs were:
 
 - missing values
-- duplicate labels
-- variants of existing concepts
+- duplicate descriptions
+- variants of existing categories
 - narrow specialty-specific concepts
 
-Examples of genuine but uncommon concepts included:
-
-- specialty-specific procedural training gaps
-- rotation duration limiting learning progression
-- narrow knowledge gaps
-- highly specific technical-skill issues
-
-This suggests that the broad codebook is already relatively comprehensive.
+This suggests that the broad coding framework is approaching **conceptual saturation**, although human validation remains necessary.
 
 ---
 
-# Integrated Conceptual Model
+# Integrated Working Model
 
-The combined findings suggest the following working model:
+The combined results suggest the following hypothesis-generating model:
 
 ```text
 LEARNING ENVIRONMENT
 
-Faculty teaching / mentorship
-Teaching infrastructure
+Teaching and mentorship
 Psychological safety
-Supervision / graduated autonomy
-Workload and wellbeing context
+Supervision
+Teaching infrastructure
+Workload and wellbeing
 Assessment and workflow context
 
-                ↓
+              ↓
 
 LEARNING MECHANISMS
 
-Iterative feedback / coaching
-Direct supervision / scaffolding
-Reflection / self-assessment
+Feedback and coaching
+Supervision and scaffolding
+Reflection
 Structured teaching
-Repeated clinical exposure
-Increasing ownership
+Repeated exposure
+Increasing responsibility
 
-                ↓
+              ↓
 
-DEVELOPMENTAL OUTCOMES
+DEVELOPMENT
 
-Communication / teamwork
+Communication and teamwork
 Feedback receptivity
 Clinical reasoning
-Autonomy / confidence
+Autonomy and confidence
 Professional identity
-Efficiency / organization
+Efficiency and organization
 ```
 
-The pathway may be influenced by contextual moderators including:
+Potential contextual moderators include:
 
 ```text
-Workflow barriers
-Clinical workload
-Wellbeing / fatigue
-Assessment expectations
-Rotation exposure
-Patient-care responsibility
-Equity / discrimination climate
+workload
+workflow barriers
+wellbeing
+assessment expectations
+rotation exposure
+clinical responsibility
+equity/discrimination climate
 ```
 
-This represents a **working conceptual model**, not a proven causal pathway.
+This is a **working conceptual model**, not a demonstrated causal pathway.
 
 ---
 
-# What Was Not Obvious From Any Single Analysis
+# 50K → 100K: What Changed?
 
-Several findings became visible only when multiple results were interpreted together.
-
-## 1. Lower scores may produce more informative narratives
-
-Lower-scoring evaluations contain substantially more environmental and system context.
-
-The narrative field may therefore function as an explanatory layer around the structured score.
-
----
-
-## 2. Feedback has a quantity–quality gap
-
-Feedback is nearly universal.
-
-High-quality feedback is not.
-
-The intervention target should therefore be **feedback quality**, not simply feedback volume.
-
----
-
-## 3. Psychological safety and supervision form relational infrastructure
-
-Psychological safety and supervision appear repeatedly across:
-
-- prevalence analysis
-- co-occurrence analysis
-- sensitizing constructs
-- learning-mechanism analysis
-
-Together, they appear to form part of the relational infrastructure necessary for learning.
-
----
-
-## 4. The 100K dataset increases depth more than statistical sample size
-
-The corpus contains:
+Increasing the corpus from 50,000 to 100,000 rows doubled the narrative volume but increased the number of evaluation events from:
 
 ```text
-100,000 narrative rows
+1,727 → 1,888
 ```
 
-but only:
+an increase of only approximately **9.3%**.
 
-```text
-1,888 evaluation events
-```
+This is methodologically important.
 
-The large corpus therefore provides extremely rich within-event qualitative information rather than 100,000 independent observations.
+The larger analysis primarily provides:
 
----
+- greater within-event narrative coverage
+- greater qualitative depth
+- stronger stability of recurring themes
+- better opportunity to identify rare cases
+- stronger taxonomy-gap assessment
 
-## 5. Positive evaluation culture may hide important minority signals
+rather than twice the independent statistical sample size.
 
-Because approximately 93% of event-level narrative performance signals were positive, rare mixed and concern cases can easily disappear within overall averages.
-
-Those cases may actually be among the most important observations for educational improvement.
+The broad conceptual findings remained stable across the analyses.
 
 ---
 
 # Practical Implications
 
-The analysis suggests several potential interventions.
+## Improve Feedback Quality
 
-## Improve Feedback Specificity
-
-Encourage feedback writers to use:
+Consider structured prompts encouraging:
 
 ```text
 Observed behavior
@@ -1095,209 +761,184 @@ Observed behavior
 → specific next step
 ```
 
-Possible metrics include:
+Possible measures:
 
 - mean specificity
 - mean actionability
-- percentage of comments rated ≥4/5
-- changes by evaluation type
+- percentage of comments ≥4/5
+- differences across evaluation channels
 
 ---
 
-## Monitor Psychological Safety
+## Monitor Psychological Safety and Supervision
 
-Programs could monitor:
+Potential program-level indicators include:
 
 - psychological safety
-- help-seeking
 - supervisor availability
-- communication climate
-- fatigue and workload
-
-These indicators may be useful as educational-environment monitoring measures.
+- safe help-seeking
+- workload/fatigue
+- wellbeing signals
 
 ---
 
-## Treat Low-Score Narratives as System Diagnostics
+## Use Low-Score Narratives as Contextual Diagnostics
 
-When structured performance scores are low, narrative review should consider whether the evaluation also describes:
+When scores are low, consider examining whether narratives also contain:
 
 - workflow barriers
-- excessive workload
-- inadequate supervision
+- workload problems
+- supervision concerns
 - wellbeing strain
 - rotation limitations
-- unclear assessment expectations
-- equity or discrimination concerns
+- assessment issues
+- equity-related concerns
 
-This may help avoid interpreting every low score as solely a trainee-level problem.
+This may help distinguish individual performance issues from broader environmental contributors.
 
 ---
 
-## Human-Review Rare High-Value Cases
+## Review Rare High-Value Cases
 
-Priority cases for human review may include:
+Priority review categories may include:
 
 - concern narratives
-- mixed narratives
+- mixed signals
 - negative cases
-- very low-confidence classifications
+- low-confidence outputs
 - serious patient outcomes
-- discrimination/bias signals
+- bias/discrimination
 - handoff failures
-- error-disclosure cases
+- error-disclosure signals
 
 ---
 
-# Model Validation Priorities
+# Validation Priorities
 
-The 100K pipeline completed successfully:
+The pipeline completed:
 
 ```text
-100,000 rows classified
-0 unresolved processing failures
+100,000 classified rows
+0 unresolved technical failures
 ```
 
-However, successful processing is not equivalent to human validation.
+However:
 
-The analysis identified:
+```text
+successful processing ≠ validated classification
+```
+
+The analysis also identified:
 
 ```text
 850 zero-confidence rows
 21,736 rows below the predefined confidence threshold
-1,429 events containing material requiring adjudication
+1,429 evaluation events containing material requiring adjudication
 ```
 
-Future validation should therefore include:
+Future validation should report:
 
-- stratified human review
-- oversampling rare concern cases
-- review of zero-confidence outputs
-- review of taxonomy-gap cases
 - precision
 - recall
 - F1
+- inter-rater agreement
 - human–LLM agreement
-- inter-rater reliability
 
-Accuracy alone should not be used because of the severe class imbalance in narrative performance signals.
+Validation should oversample rare and difficult classes rather than relying primarily on overall accuracy.
 
 ---
 
 # Future Research
 
-## Phase 1 — Clean and Validate
+## 1. Human Validation
 
-Priorities:
+Audit a stratified sample including:
 
-- normalize taxonomy-gap labels
-- remove missing and placeholder outputs
-- review zero-confidence classifications
-- conduct stratified human validation
-- report precision, recall, F1, and agreement
+- ordinary cases
+- low-confidence classifications
+- concern cases
+- mixed cases
+- negative cases
+- taxonomy-gap cases
 
 ---
 
-## Phase 2 — Add Row-Level Analysis
+## 2. Row-Level Prevalence
 
-Current prevalence estimates are primarily event-level.
+Current results emphasize event-level prevalence.
 
-Future work should report both:
+Future work should also measure:
 
 ```text
-Event-level prevalence
+row-level prevalence
 ```
 
 and:
 
 ```text
-Row-level prevalence
+within-event proportion of narratives containing each code
 ```
 
-as well as:
+This would distinguish:
 
-```text
-proportion of narratives within each event containing each code
-```
-
-This will distinguish:
-
-> “The theme appeared somewhere in the evaluation”
+> “This concept appeared somewhere in the evaluation”
 
 from:
 
-> “The theme dominated the evaluation.”
+> “This concept dominated the evaluation.”
 
 ---
 
-## Phase 3 — Multivariable Mixed-Effects Modeling
+## 3. Multivariable Mixed-Effects Modeling
 
-Structured-score analyses should adjust for clustering and confounding.
-
-Possible covariates include:
+Future analyses should account for clustering by:
 
 - program
-- specialty
-- evaluation type
-- evaluator
 - trainee
+- evaluator
+- evaluation type
 - year
+- specialty
 - repeated observations
-- rotation context
-
-This would help determine which learning-environment factors remain associated with scores after accounting for contextual differences.
 
 ---
 
-## Phase 4 — Longitudinal Modeling
+## 4. Longitudinal Development
 
-A longitudinal mixed-effects model could investigate:
+A central next question is:
 
 > **Which learning-environment conditions are associated with better trainee development over time?**
 
 Potential analyses include:
 
+- trainee-specific trajectories
 - environment × time interactions
-- trainee-specific growth trajectories
-- program-level effects
 - evaluator effects
+- program effects
 - evaluation-type effects
 
 ---
 
-## Phase 5 — Prospective Educational Intervention
+## 5. Prospective Feedback Intervention
 
-A future intervention could introduce a structured feedback-writing framework.
+A structured feedback intervention could test whether improving specificity and actionability changes:
 
-For example:
-
-```text
-Observed behavior
-→ impact/context
-→ specific next step
-```
-
-Pre/post outcomes could include:
-
-- feedback specificity
-- feedback actionability
-- learner development
-- structured scores
-- narrative developmental signals
-- psychological safety
-- rare concern signals
+- feedback quality
+- trainee development
+- structured ratings
+- developmental narratives
+- psychological-safety signals
+- downstream performance
 
 ---
 
-# Central Future Research Question
-
-The current analysis leads to the following question:
+# Central Research Question Going Forward
 
 > **Which learning-environment conditions are associated with improved trainee development after accounting for program, evaluator, evaluation type, time, and repeated observations?**
 
 ---
 
-# Repository Structure
+# Repository Contents
 
 ```text
 LargeDataSetAnalysis/
@@ -1322,174 +963,114 @@ LargeDataSetAnalysis/
 │   ├── 11_repeated_evaluatee_change.png
 │   ├── 12_taxonomy_gap_concepts.png
 │   ├── analysis_payload.txt
-│   ├── environment_by_evaluation_type.csv
-│   ├── environment_cooccurrence.csv
 │   ├── grounded_theory_interpretation.md
-│   ├── high_vs_low_score_environment.csv
-│   └── program_summary_min10.csv
+│   └── supporting CSV tables
 │
 └── 100kRows/
-    ├── 01_environment_prevalence.png
-    ├── 01_environment_prevalence.pdf
-    ├── 02_development_prevalence.png
-    ├── 02_development_prevalence.pdf
-    ├── 03_mechanism_prevalence.png
-    ├── 03_mechanism_prevalence.pdf
-    ├── 04_confidence_distribution.png
-    ├── 04_confidence_distribution.pdf
-    ├── 05_performance_signal.png
-    ├── 05_performance_signal.pdf
-    ├── 06_high_vs_low_score_odds_ratios.png
-    ├── 06_high_vs_low_score_odds_ratios.pdf
-    ├── 07_environment_cooccurrence.png
-    ├── 07_environment_cooccurrence.pdf
-    ├── 08_sensitizing_constructs.png
-    ├── 08_sensitizing_constructs.pdf
-    ├── 09_feedback_by_evaluation_type.png
-    ├── 09_feedback_by_evaluation_type.pdf
-    ├── 10_environment_over_time.png
-    ├── 10_environment_over_time.pdf
-    ├── 11_repeated_evaluatee_change.png
-    ├── 11_repeated_evaluatee_change.pdf
-    ├── 12_taxonomy_gap_concepts.png
-    ├── 12_taxonomy_gap_concepts.pdf
+    ├── 01_environment_prevalence.png / .pdf
+    ├── 02_development_prevalence.png / .pdf
+    ├── 03_mechanism_prevalence.png / .pdf
+    ├── 04_confidence_distribution.png / .pdf
+    ├── 05_performance_signal.png / .pdf
+    ├── 06_high_vs_low_score_odds_ratios.png / .pdf
+    ├── 07_environment_cooccurrence.png / .pdf
+    ├── 08_sensitizing_constructs.png / .pdf
+    ├── 09_feedback_by_evaluation_type.png / .pdf
+    ├── 10_environment_over_time.png / .pdf
+    ├── 11_repeated_evaluatee_change.png / .pdf
+    ├── 12_taxonomy_gap_concepts.png / .pdf
     ├── analysis_payload.txt
-    ├── high_vs_low_score_environment.csv
-    ├── sensitizing_constructs.csv
-    └── taxonomy_gap_concepts.csv
+    └── supporting CSV tables
 ```
 
 ---
 
-# Included Visualizations
+# Presentation Decks
 
-The repository includes figures examining:
+### 50K Analysis
 
-1. learning-environment prevalence
-2. developmental-outcome prevalence
-3. learning mechanisms
-4. model-confidence distribution
-5. narrative performance signals
-6. high-versus-low structured-score odds ratios
-7. learning-environment co-occurrence
-8. sensitizing constructs
-9. feedback specificity and actionability
-10. learning-environment trends over time
-11. repeated-evaluatee structured-score change
-12. taxonomy-gap concepts
+[**GMETS Analysis - Rick Rejeleene.pptx**](GMETS%20Analysis%20-%20Rick%20Rejeleene.pptx)
 
-PDF versions are included for many 100K figures to support publication-quality export.
+### 100K Analysis
 
----
+[**GMETS 100K Analysis - Rick Rejeleene.pptx**](GMETS_100K_Analysis_Rick_Rejeleene.pptx)
 
-# Presentation Files
+The 100K presentation includes:
 
-Two slide decks are included.
-
-```text
-GMETS Analysis - Rick Rejeleene.pptx
-```
-
-summarizes the earlier analysis.
-
-```text
-GMETS_100K_Analysis_Rick_Rejeleene.pptx
-```
-
-presents the expanded 100K analysis, including:
-
-- methodology
+- data provenance
 - input definitions
-- LLM outputs
+- coding methodology
 - figures
 - interpretation
 - non-obvious findings
-- practical recommendations
-- future research directions
+- recommendations
+- future research roadmap
 
 ---
 
-# Important Methodological Limitations
+# Important Limitations
 
-These analyses should be interpreted with several limitations in mind.
+### Association does not imply causation
 
-### Association is not causation
+Observed relationships between environmental themes and structured scores are associative.
 
-The score-association analyses identify themes that occur more frequently in particular score groups.
+They should not be interpreted as causal effects.
 
-They do not prove that those themes caused the observed scores.
+### Event-Level Saturation
 
-### Event-level saturation
+A category only has to appear once among potentially many narrative rows within an evaluation event for that event to count as positive.
 
-Evaluation events can contain many individual narrative responses.
+This can produce high event-level prevalence.
 
-A theme only has to appear once within an event for the event to count as containing the theme.
+### LLM Confidence Is Not Calibrated Probability
 
-This can produce high event-level prevalence values.
+The confidence output is model-generated and should not be interpreted as a statistically calibrated probability.
 
-### LLM confidence is not probability
-
-Model confidence is self-reported by the model and is not statistically calibrated.
-
-### Positive class imbalance
+### Severe Positive-Class Imbalance
 
 Narrative performance signals are overwhelmingly positive.
 
-This makes standard accuracy an inappropriate validation metric.
+Validation metrics therefore need to emphasize precision, recall, F1, and minority-class performance.
 
-### Structured and narrative evaluations differ
+### Narrative and Structured Ratings Are Not Interchangeable
 
-Very low agreement between narrative and structured performance bands suggests the two sources may capture different aspects of performance and context.
+The very low agreement observed between narrative-derived performance signals and structured ratings suggests they may represent different constructs.
 
-### Human validation remains necessary
+### Human Validation Is Required
 
-The coding pipeline should not be used for high-stakes educational decisions without independent human validation.
-
----
-
-# Interpretation
-
-The central interpretation emerging from the 100K analysis is:
-
-> **Trainee development appears to emerge from a relational learning system in which teaching, supervision, psychological safety, feedback, reflection, workload conditions, and progressively increasing responsibility interact.**
-
-A second important finding is:
-
-> **Narrative evaluation comments may be particularly valuable for explaining the context surrounding trainee performance rather than simply reproducing structured numerical scores.**
-
-These findings should be treated as hypothesis-generating and require further validation through adjusted statistical models, longitudinal analysis, and prospective research.
-
----
-
-# Status
-
-This repository contains research-stage analyses.
-
-The current results are intended for:
-
-- methodological development
-- exploratory research
-- hypothesis generation
-- educational quality-improvement planning
-- future manuscript development
-
-They should not yet be interpreted as final causal or policy conclusions.
+The current pipeline should not be used independently for high-stakes trainee assessment or educational decisions.
 
 ---
 
 # Data Governance
 
-The repository is intended to contain analytical outputs rather than raw identifiable narrative data.
+This repository contains analytical outputs, summary tables, visualizations, and presentations rather than raw identifiable narrative data.
 
-Researchers using similar pipelines should ensure compliance with:
+Users of similar methods should ensure compliance with:
 
-- institutional data-governance policies
-- privacy requirements
-- applicable IRB requirements
+- institutional privacy policies
 - data-sharing agreements
-- institutional policies governing external publication
+- applicable IRB requirements
+- institutional rules governing external publication
+- appropriate review of program-level results
 
-Program-level or institutional outputs should be reviewed before public dissemination.
+Program-level or institution-specific outputs should be reviewed before public dissemination or reuse.
+
+---
+
+# Research Status
+
+This is a **research-stage and hypothesis-generating analysis**.
+
+The current findings support:
+
+- methodological development
+- exploratory educational research
+- hypothesis generation
+- quality-improvement planning
+- future manuscript development
+
+They should not yet be interpreted as final causal or policy conclusions.
 
 ---
 
@@ -1504,48 +1085,31 @@ October 2026
 
 ---
 
-# License
-
-See:
-
-```text
-LICENSE
-```
-
-for repository licensing information.
-
----
-
 # Suggested Citation
-
-If referencing this repository in research or methodological work, a provisional citation format is:
 
 ```text
 Rejeleene R. Large-Scale GMETS Narrative Evaluation Analysis:
 AI-Assisted Mixed-Methods Analysis of Graduate Medical Education Narratives.
-GitHub repository, 2026.
+GitHub repository. 2026.
 ```
 
-Formal citation details should be updated if the work is subsequently published in a peer-reviewed journal.
+Citation information can be updated following peer-reviewed publication.
 
 ---
 
-# Summary
+# License
 
-In short, the 100K GMETS analysis suggests that:
+See [LICENSE](LICENSE).
 
-- feedback and supervision are central mechanisms of learning
-- psychological safety is a major component of the learning environment
-- trainee development extends beyond technical competence
-- workload and wellbeing are closely linked to educational context
-- lower-scoring evaluations contain more system-level and environmental information
-- narrative and structured performance measures capture different signals
-- feedback is abundant but only moderately specific and actionable
-- the coding taxonomy appears close to saturation
-- rare negative and concern narratives may be disproportionately valuable
-- future work should move from large-scale discovery toward validation, adjusted modeling, longitudinal analysis, and prospective intervention
+---
 
-The next analytical progression is:
+## Summary
+
+The analysis supports a view of Graduate Medical Education as a **relational learning system** in which teaching, supervision, psychological safety, feedback, reflection, workload conditions, and increasing responsibility interact.
+
+The results also suggest that narrative evaluations may be particularly useful for understanding the **context and mechanisms surrounding performance**, rather than simply duplicating numerical ratings.
+
+The next progression is:
 
 ```text
 DISCOVER
